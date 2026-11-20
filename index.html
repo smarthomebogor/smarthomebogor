@@ -4,163 +4,163 @@
     <title>SmartHome Bogor - Rumah Pintar, Tanpa Ribet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FONT MAIN-MAIN / PLAYFUL -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { margin: 0; background: #F8FAFC; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #FFF7ED; font-family: 'Nunito', sans-serif; }
+        h1, h2, h3, .font-main { font-family: 'Fredoka', sans-serif; letter-spacing: -0.5px; }
         img { max-width: 100%; }
         .faq-jawaban { display: none; }
         .faq-jawaban.buka { display: block; }
-        /* MODERN HERO - HD + CLEAN */
-        .hero-modern {
+        /* HERO PLAYFUL */
+        .hero-play {
             background: linear-gradient(180deg, rgba(2,6,23,0.55) 0%, rgba(2,6,23,0.78) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
-            border-radius: 0 0 32px 32px;
+            border-radius: 0 0 36px 36px;
         }
-        .card-modern { background: white; border-radius: 24px; box-shadow: 0 8px 30px rgba(15,23,42,0.06); border: 1px solid #E2E8F0; }
-        .pill { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); }
-        .btn-modern { box-shadow: 0 12px 24px rgba(34,197,94,0.35); }
-        .price-card.active { border: 2px solid #0F172A; background: #0F172A; color: white; }
-        .price-card.active p { color: #CBD5E1; }
+        .card-play { background: white; border-radius: 28px; box-shadow: 0 10px 30px rgba(15,23,42,0.07); border: 2px solid #FFE4C7; }
+        .pill { background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+        .btn-play { box-shadow: 0 10px 0 #15803D; }
+        .btn-play:active { transform: translateY(4px); box-shadow: 0 4px 0 #15803D; }
     </style>
 </head>
 <body class="text-slate-900 overflow-x-hidden pb-24">
 
-<!-- NAVBAR MODERN -->
+<!-- NAVBAR PLAYFUL -->
 <div class="max-w-6xl mx-auto px-4 pt-4 flex justify-between items-center">
     <div class="flex items-center gap-2">
-        <div class="w-9 h-9 bg-slate-900 text-white rounded-xl flex items-center justify-center font-extrabold">S</div>
-        <div class="leading-none"><p class="font-extrabold text-[15px]">SmartHome <span class="text-green-500">Bogor</span></p><p class="text-[11px] text-slate-500">JABODETABEK • Garansi 30 Hari</p></div>
+        <div class="w-10 h-10 bg-orange-400 text-white rounded-2xl flex items-center justify-center font-main text-xl rotate-[-6deg]">🏠</div>
+        <div class="leading-none"><p class="font-main text-[18px] font-semibold">SmartHome <span class="text-green-500">Bogor</span></p><p class="text-[11px] font-bold text-slate-500">JABODETABEK • Garansi 30 Hari</p></div>
     </div>
-    <a href="https://wa.me/628137000432" class="bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-full">Chat WA →</a>
+    <a href="https://wa.me/628137000432" class="bg-slate-900 text-white text-xs font-extrabold px-4 py-2.5 rounded-full">Chat WA →</a>
 </div>
 
-<!-- HERO MODERN -->
+<!-- HERO PLAYFUL -->
 <div class="max-w-6xl mx-auto px-4 mt-4">
-<div class="hero-modern text-white text-center px-5 py-12 md:py-16">
-    <p class="text-[11px] pill inline-block px-4 py-1.5 rounded-full font-semibold tracking-wide">● MELAYANI BOGOR & JABODETABEK</p>
-    <h1 class="text-[32px] md:text-[52px] font-extrabold leading-[1.05] mt-5">Rumah Jadi Pintar,<br>Tanpa Ribet<span class="text-green-400">.</span></h1>
-    <p class="mt-4 text-[14px] md:text-[16px] text-slate-200 max-w-xl mx-auto leading-relaxed">Lampu, CCTV, Kunci Digital & Sensor — semua dikontrol dari HP. Survei gratis, bayar setelah terpasang.</p>
+<div class="hero-play text-white text-center px-5 py-12 md:py-16">
+    <p class="text-[11px] pill inline-block px-4 py-1.5 rounded-full font-extrabold tracking-wide">✨ MELAYANI BOGOR & JABODETABEK ✨</p>
+    <h1 class="text-[34px] md:text-[54px] font-semibold leading-[1.05] mt-5">Rumah Jadi Pintar,<br>Tanpa Ribet<span class="text-yellow-300">!</span></h1>
+    <p class="mt-4 text-[14px] md:text-[16px] text-slate-200 max-w-xl mx-auto leading-relaxed font-bold">Lampu, CCTV, Kunci Digital & Sensor — semua dikontrol dari HP. Survei gratis, bayar setelah terpasang.</p>
     <div class="flex flex-col sm:flex-row justify-center gap-3 mt-7">
-        <a href="https://wa.me/628137000432" class="btn-modern bg-green-500 text-white font-bold px-7 py-3.5 rounded-full text-sm">Konsultasi Gratis via WA</a>
-        <a href="#paket" class="bg-white text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm">Lihat Paket ↓</a>
+        <a href="https://wa.me/628137000432" class="btn-play bg-green-500 text-white font-extrabold px-7 py-3.5 rounded-full text-sm">Konsultasi Gratis via WA 💬</a>
+        <a href="#paket" class="bg-white text-slate-900 font-extrabold px-7 py-3.5 rounded-full text-sm">Lihat Paket ↓</a>
     </div>
     <div class="flex justify-center gap-6 mt-8 text-center">
-        <div><p class="font-extrabold text-lg">100+</p><p class="text-[11px] text-slate-300">Rumah Terpasang</p></div>
-        <div class="border-l border-white/20 pl-6"><p class="font-extrabold text-lg">4.9 / 5</p><p class="text-[11px] text-slate-300">Rating Pelanggan</p></div>
-        <div class="border-l border-white/20 pl-6"><p class="font-extrabold text-lg">Tanpa DP</p><p class="text-[11px] text-slate-300">Bayar Setelah Pasang</p></div>
+        <div><p class="font-main text-[20px]">100+</p><p class="text-[11px] text-slate-300 font-bold">Rumah Terpasang</p></div>
+        <div class="border-l border-white/20 pl-6"><p class="font-main text-[20px]">4.9 / 5 ⭐</p><p class="text-[11px] text-slate-300 font-bold">Rating Pelanggan</p></div>
+        <div class="border-l border-white/20 pl-6"><p class="font-main text-[20px]">Tanpa DP</p><p class="text-[11px] text-slate-300 font-bold">Bayar Setelah Pasang</p></div>
     </div>
 </div>
 </div>
 
 <div class="max-w-6xl mx-auto px-4">
 
-<!-- PROMO -->
-<div class="bg-green-50 border border-green-200 p-4 text-center rounded-2xl mt-5">
-    <p class="font-bold text-green-800 text-[13px]">🎉 PROMO: Survei + Konsultasi GRATIS — Tanpa DP, Bayar Setelah Terpasang</p>
+<div class="bg-yellow-100 border-2 border-yellow-300 p-4 text-center rounded-[20px] mt-5">
+    <p class="font-extrabold text-orange-800 text-[13px]">🎉 PROMO: Survei + Konsultasi GRATIS — Tanpa DP, Bayar Setelah Terpasang</p>
 </div>
 
-<!-- LAYANAN MODERN -->
+<!-- LAYANAN -->
 <div class="grid md:grid-cols-2 gap-4 mt-5">
-    <div class="card-modern p-6">
-        <p class="text-[11px] font-bold text-green-600 tracking-widest">LAYANAN KAMI</p>
-        <h2 class="text-[22px] font-extrabold mt-1">Apa yang bisa kami pasang?</h2>
-        <div class="mt-4 space-y-3 text-[14px]">
-            <div class="flex justify-between border-b pb-2"><span>💡 Lampu & Saklar Pintar</span><b>Rp 180rb / titik</b></div>
-            <div class="flex justify-between border-b pb-2"><span>📹 CCTV & Doorbell Kamera</span><b>Rp 750rb / titik</b></div>
-            <div class="flex justify-between border-b pb-2"><span>🔐 Smart Lock / Kunci Digital</span><b>Rp 1,2jt / unit</b></div>
-            <div class="flex justify-between border-b pb-2"><span>🔊 Google Home & Alexa Setup</span><b>Rp 350rb / paket</b></div>
+    <div class="card-play p-6">
+        <p class="text-[11px] font-black text-green-600 tracking-widest">LAYANAN KAMI</p>
+        <h2 class="text-[24px] font-semibold mt-1">Apa yang bisa kami pasang?</h2>
+        <div class="mt-4 space-y-3 text-[14px] font-bold">
+            <div class="flex justify-between border-b-2 border-dashed pb-2"><span>💡 Lampu & Saklar Pintar</span><b>Rp 180rb / titik</b></div>
+            <div class="flex justify-between border-b-2 border-dashed pb-2"><span>📹 CCTV & Doorbell Kamera</span><b>Rp 750rb / titik</b></div>
+            <div class="flex justify-between border-b-2 border-dashed pb-2"><span>🔐 Smart Lock / Kunci Digital</span><b>Rp 1,2jt / unit</b></div>
+            <div class="flex justify-between border-b-2 border-dashed pb-2"><span>🔊 Google Home & Alexa Setup</span><b>Rp 350rb / paket</b></div>
             <div class="flex justify-between"><span>🚨 Sensor Gerak, Asap & Banjir</span><b>Rp 250rb / titik</b></div>
         </div>
     </div>
-    <div class="card-modern p-0 overflow-hidden">
+    <div class="card-play p-0 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover min-h-[280px]">
     </div>
 </div>
 
-<!-- PAKET MODERN -->
-<h2 id="paket" class="text-[22px] font-extrabold text-center mt-8">Pilih Paket Kamu</h2>
-<p class="text-center text-slate-500 text-[13px] mt-1">Harga transparan, tidak ada biaya tersembunyi.</p>
+<!-- PAKET -->
+<h2 id="paket" class="text-[26px] font-semibold text-center mt-8">Pilih Paket Kamu 🎁</h2>
+<p class="text-center text-slate-500 text-[13px] font-bold mt-1">Harga transparan, tidak ada biaya tersembunyi.</p>
 <div class="grid md:grid-cols-3 gap-4 mt-4">
-    <div class="card-modern p-6 text-center"><p class="text-[11px] font-bold text-slate-400 tracking-widest">BASIC</p><h3 class="text-[26px] font-extrabold mt-1">Rp 950rb</h3><p class="text-[13px] text-slate-500 mt-2">4 Lampu Pintar + 2 Stop Kontak Pintar</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Basic" class="block mt-4 border border-slate-900 font-bold py-3 rounded-full text-sm">Pilih Basic</a></div>
-    <div class="card-modern price-card active p-6 text-center relative"><p class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[11px] font-bold px-3 py-1 rounded-full">PALING LARIS</p><p class="text-[11px] font-bold text-green-400 tracking-widest">PRO</p><h3 class="text-[26px] font-extrabold mt-1">Rp 2,5jt</h3><p class="text-[13px] mt-2">Basic + CCTV 2 Titik + Smart Lock</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Pro" class="block mt-4 bg-green-500 font-bold py-3 rounded-full text-sm text-white">Pilih Pro</a></div>
-    <div class="card-modern p-6 text-center"><p class="text-[11px] font-bold text-slate-400 tracking-widest">SULTAN</p><h3 class="text-[26px] font-extrabold mt-1">Rp 5jt+</h3><p class="text-[13px] text-slate-500 mt-2">Full Rumah Pintar + Sensor + Gorden Otomatis</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Sultan" class="block mt-4 border border-slate-900 font-bold py-3 rounded-full text-sm">Pilih Sultan</a></div>
+    <div class="card-play p-6 text-center"><p class="text-[11px] font-black text-slate-400 tracking-widest">BASIC</p><h3 class="text-[28px] font-semibold mt-1">Rp 950rb</h3><p class="text-[13px] font-bold text-slate-500 mt-2">4 Lampu Pintar + 2 Stop Kontak Pintar</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Basic" class="block mt-4 border-2 border-slate-900 font-extrabold py-3 rounded-full text-sm">Pilih Basic</a></div>
+    <div class="card-play p-6 text-center relative" style="background:#0F172A; color:white; border-color:#0F172A;"><p class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-400 text-white text-[11px] font-black px-3 py-1 rounded-full rotate-[-2deg]">PALING LARIS 🔥</p><p class="text-[11px] font-black text-green-400 tracking-widest">PRO</p><h3 class="text-[28px] font-semibold mt-1">Rp 2,5jt</h3><p class="text-[13px] font-bold text-slate-300 mt-2">Basic + CCTV 2 Titik + Smart Lock</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Pro" class="block mt-4 bg-green-500 font-extrabold py-3 rounded-full text-sm text-white">Pilih Pro 🚀</a></div>
+    <div class="card-play p-6 text-center"><p class="text-[11px] font-black text-slate-400 tracking-widest">SULTAN</p><h3 class="text-[28px] font-semibold mt-1">Rp 5jt+</h3><p class="text-[13px] font-bold text-slate-500 mt-2">Full Rumah Pintar + Sensor + Gorden Otomatis</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Sultan" class="block mt-4 border-2 border-slate-900 font-extrabold py-3 rounded-full text-sm">Pilih Sultan 👑</a></div>
 </div>
 
-<!-- KALKULATOR MODERN -->
-<div class="card-modern p-6 mt-4">
-    <h2 class="text-[18px] font-extrabold">Hitung Sendiri Harga Kamu</h2>
-    <div class="grid sm:grid-cols-2 gap-2 mt-3 text-[14px]">
-        <label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="lampu" onchange="hitung()" class="w-4 h-4"> Lampu Pintar (Rp 180rb)</label>
-        <label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="cctv" onchange="hitung()" class="w-4 h-4"> CCTV (Rp 750rb)</label>
-        <label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="kunci" onchange="hitung()" class="w-4 h-4"> Smart Lock (Rp 1,2jt)</label>
-        <label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="google" onchange="hitung()" class="w-4 h-4"> Google Home (Rp 350rb)</label>
+<!-- KALKULATOR -->
+<div class="card-play p-6 mt-4">
+    <h2 class="text-[20px] font-semibold">Hitung Sendiri Harga Kamu 🧮</h2>
+    <div class="grid sm:grid-cols-2 gap-2 mt-3 text-[14px] font-bold">
+        <label class="flex items-center gap-2 border-2 rounded-2xl p-3 bg-orange-50"><input type="checkbox" id="lampu" onchange="hitung()" class="w-5 h-5"> Lampu Pintar (Rp 180rb)</label>
+        <label class="flex items-center gap-2 border-2 rounded-2xl p-3 bg-orange-50"><input type="checkbox" id="cctv" onchange="hitung()" class="w-5 h-5"> CCTV (Rp 750rb)</label>
+        <label class="flex items-center gap-2 border-2 rounded-2xl p-3 bg-orange-50"><input type="checkbox" id="kunci" onchange="hitung()" class="w-5 h-5"> Smart Lock (Rp 1,2jt)</label>
+        <label class="flex items-center gap-2 border-2 rounded-2xl p-3 bg-orange-50"><input type="checkbox" id="google" onchange="hitung()" class="w-5 h-5"> Google Home (Rp 350rb)</label>
     </div>
-    <h3 id="total" class="font-extrabold text-[20px] mt-4">Total: Rp 0</h3>
+    <h3 id="total" class="font-main text-[22px] mt-4">Total: Rp 0</h3>
 </div>
 
 <!-- PILIH PAKET + FOTO -->
-<div class="card-modern p-6 mt-4 overflow-hidden">
-    <h2 class="text-[18px] font-extrabold">Lihat Detail Paket</h2>
-    <select id="pilihPaket" onchange="gantiPaket()" class="w-full p-3.5 border rounded-xl text-sm mt-3 bg-slate-50">
+<div class="card-play p-6 mt-4 overflow-hidden">
+    <h2 class="text-[20px] font-semibold">Lihat Detail Paket 👀</h2>
+    <select id="pilihPaket" onchange="gantiPaket()" class="w-full p-3.5 border-2 rounded-2xl text-sm mt-3 bg-orange-50 font-bold">
         <option value="basic">Paket Basic</option><option value="pro">Paket Pro</option><option value="sultan">Paket Sultan</option>
     </select>
-    <h3 id="hargaTampil" class="font-extrabold text-[18px] mt-3">Harga: Rp 950rb</h3>
-    <p id="descTampil" class="text-sm text-slate-500">4 Lampu Pintar + 2 Stop Kontak Pintar</p>
-    <img id="fotoTampil" src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80" class="w-full h-[240px] object-cover rounded-2xl mt-3">
+    <h3 id="hargaTampil" class="font-main text-[20px] mt-3">Harga: Rp 950rb</h3>
+    <p id="descTampil" class="text-sm font-bold text-slate-500">4 Lampu Pintar + 2 Stop Kontak Pintar</p>
+    <img id="fotoTampil" src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80" class="w-full h-[240px] object-cover rounded-[20px] mt-3">
 </div>
 
-<!-- DISKON LAMPU -->
-<div class="card-modern p-6 mt-4">
-    <h2 class="text-[18px] font-extrabold">Hitung Lampu + Diskon 10%</h2>
-    <p class="text-[13px] text-slate-500 mt-1">Pasang 10 titik atau lebih, otomatis dapat diskon 10%.</p>
-    <input type="number" id="jumlahLampu" placeholder="Contoh: 12" oninput="hitungLampu()" min="0" class="w-full p-3.5 border rounded-xl text-sm mt-3 bg-slate-50">
-    <h3 id="hasilLampu" class="font-extrabold text-[18px] mt-3">Total: Rp 0</h3>
-    <p id="detailLampu" class="text-[13px] text-slate-500">Ketik jumlah titik lampu dulu ya, Dicky!</p>
-    <div id="diskonBox" style="display:none; background:#FEF9C3; border:1px solid #FACC15; padding:12px; border-radius:12px; font-weight:700; color:#854D0E; margin-top:12px; font-size:13px;">🎉 Selamat! Kamu dapat diskon 10% karena pasang 10 titik atau lebih!</div>
+<!-- DISKON -->
+<div class="card-play p-6 mt-4">
+    <h2 class="text-[20px] font-semibold">Hitung Lampu + Diskon 10% 🎉</h2>
+    <p class="text-[13px] font-bold text-slate-500 mt-1">Pasang 10 titik atau lebih, otomatis dapat diskon 10%.</p>
+    <input type="number" id="jumlahLampu" placeholder="Contoh: 12" oninput="hitungLampu()" min="0" class="w-full p-3.5 border-2 rounded-2xl text-sm mt-3 bg-orange-50 font-bold">
+    <h3 id="hasilLampu" class="font-main text-[20px] mt-3">Total: Rp 0</h3>
+    <p id="detailLampu" class="text-[13px] font-bold text-slate-500">Ketik jumlah titik lampu dulu ya, Dicky!</p>
+    <div id="diskonBox" style="display:none; background:#FEF9C3; border:2px dashed #FACC15; padding:12px; border-radius:16px; font-weight:800; color:#854D0E; margin-top:12px; font-size:13px;">🎉 Selamat! Kamu dapat diskon 10% karena pasang 10 titik atau lebih!</div>
 </div>
 
-<!-- TESTIMONI MODERN -->
+<!-- TESTIMONI -->
 <div class="mt-8">
-    <h2 class="text-[20px] font-extrabold text-center">Kata Mereka</h2>
+    <h2 class="text-[22px] font-semibold text-center">Kata Mereka 🥰</h2>
     <div class="grid md:grid-cols-3 gap-4 mt-4">
-        <div class="card-modern p-5"><p class="text-yellow-500 text-sm">★★★★★</p><p class="text-[13px] mt-2 leading-relaxed">"Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor."</p><p class="font-bold text-sm mt-3">Budi — Bogor Kota</p><p class="text-[11px] text-slate-400">CCTV 2 Titik</p></div>
-        <div class="card-modern p-5"><p class="text-yellow-500 text-sm">★★★★★</p><p class="text-[13px] mt-2 leading-relaxed">"Lampu bisa dimatiin dari HP, anak-anak seneng banget. Dijelasin sampai bisa."</p><p class="font-bold text-sm mt-3">Sari — Cibinong</p><p class="text-[11px] text-slate-400">Lampu 8 Titik</p></div>
-        <div class="card-modern p-5"><p class="text-yellow-500 text-sm">★★★★★</p><p class="text-[13px] mt-2 leading-relaxed">"Smart Lock enak banget, tidak bawa kunci lagi. Bayar setelah terpasang, jadi aman."</p><p class="font-bold text-sm mt-3">Andi — Depok</p><p class="text-[11px] text-slate-400">Smart Lock + Doorbell</p></div>
+        <div class="card-play p-5"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-[13px] font-bold mt-2 leading-relaxed">"Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor."</p><p class="font-extrabold text-sm mt-3">Budi — Bogor Kota</p><p class="text-[11px] font-bold text-slate-400">CCTV 2 Titik</p></div>
+        <div class="card-play p-5"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-[13px] font-bold mt-2 leading-relaxed">"Lampu bisa dimatiin dari HP, anak-anak seneng banget. Dijelasin sampai bisa."</p><p class="font-extrabold text-sm mt-3">Sari — Cibinong</p><p class="text-[11px] font-bold text-slate-400">Lampu 8 Titik</p></div>
+        <div class="card-play p-5"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-[13px] font-bold mt-2 leading-relaxed">"Smart Lock enak banget, tidak bawa kunci lagi. Bayar setelah terpasang, jadi aman."</p><p class="font-extrabold text-sm mt-3">Andi — Depok</p><p class="text-[11px] font-bold text-slate-400">Smart Lock + Doorbell</p></div>
     </div>
 </div>
 
-<!-- FAQ MODERN -->
-<div class="card-modern p-6 mt-6">
-    <h2 class="text-[18px] font-extrabold mb-2">Pertanyaan Umum</h2>
-    <div class="border-b py-3"><button onclick="bukaFaq('faq1')" class="w-full text-left font-bold text-sm flex justify-between">Berapa lama pemasangannya? <span>›</span></button><p id="faq1" class="faq-jawaban text-[13px] text-slate-500 mt-2">Rumah biasa 2-4 jam selesai. Paket Sultan 1 hari. Sudah termasuk setting HP sampai bisa dipakai.</p></div>
-    <div class="border-b py-3"><button onclick="bukaFaq('faq2')" class="w-full text-left font-bold text-sm flex justify-between">Ada garansi tidak? <span>›</span></button><p id="faq2" class="faq-jawaban text-[13px] text-slate-500 mt-2">Ada, garansi pemasangan 30 hari. Kalau error karena pemasangan kami, kami perbaiki gratis.</p></div>
-    <div class="border-b py-3"><button onclick="bukaFaq('faq3')" class="w-full text-left font-bold text-sm flex justify-between">Harus DP dulu? <span>›</span></button><p id="faq3" class="faq-jawaban text-[13px] text-slate-500 mt-2">Tidak. Survei & konsultasi gratis. Bayar setelah alat terpasang dan kamu sudah bisa pakai.</p></div>
-    <div class="py-3"><button onclick="bukaFaq('faq4')" class="w-full text-left font-bold text-sm flex justify-between">Wilayah mana saja? <span>›</span></button><p id="faq4" class="faq-jawaban text-[13px] text-slate-500 mt-2">Jakarta, Bogor, Depok, Tangerang, Bekasi (JABODETABEK). Di luar itu bisa chat dulu.</p></div>
+<!-- FAQ -->
+<div class="card-play p-6 mt-6">
+    <h2 class="text-[20px] font-semibold mb-2">Pertanyaan Umum ❓</h2>
+    <div class="border-b-2 border-dashed py-3"><button onclick="bukaFaq('faq1')" class="w-full text-left font-extrabold text-sm flex justify-between">Berapa lama pemasangannya? <span>›</span></button><p id="faq1" class="faq-jawaban text-[13px] font-bold text-slate-500 mt-2">Rumah biasa 2-4 jam selesai. Paket Sultan 1 hari. Sudah termasuk setting HP sampai bisa dipakai.</p></div>
+    <div class="border-b-2 border-dashed py-3"><button onclick="bukaFaq('faq2')" class="w-full text-left font-extrabold text-sm flex justify-between">Ada garansi tidak? <span>›</span></button><p id="faq2" class="faq-jawaban text-[13px] font-bold text-slate-500 mt-2">Ada, garansi pemasangan 30 hari. Kalau error karena pemasangan kami, kami perbaiki gratis.</p></div>
+    <div class="border-b-2 border-dashed py-3"><button onclick="bukaFaq('faq3')" class="w-full text-left font-extrabold text-sm flex justify-between">Harus DP dulu? <span>›</span></button><p id="faq3" class="faq-jawaban text-[13px] font-bold text-slate-500 mt-2">Tidak. Survei & konsultasi gratis. Bayar setelah alat terpasang dan kamu sudah bisa pakai.</p></div>
+    <div class="py-3"><button onclick="bukaFaq('faq4')" class="w-full text-left font-extrabold text-sm flex justify-between">Wilayah mana saja? <span>›</span></button><p id="faq4" class="faq-jawaban text-[13px] font-bold text-slate-500 mt-2">Jakarta, Bogor, Depok, Tangerang, Bekasi (JABODETABEK). Di luar itu bisa chat dulu.</p></div>
 </div>
 
-<!-- FORM MODERN -->
-<div class="mt-6 p-6 rounded-[24px] bg-slate-900 text-white shadow-xl">
-    <h2 class="text-[20px] font-extrabold text-center">Pesan Sekarang</h2>
-    <p class="text-center text-[13px] text-slate-300 mt-1 mb-4">Isi 10 detik, langsung masuk ke WA kami.</p>
-    <label class="block font-bold text-[13px] mb-1">Nama Kamu</label>
-    <input type="text" id="nama" placeholder="Contoh: Dicky" oninput="simpanForm()" class="w-full p-3.5 rounded-xl mb-3 text-sm text-slate-900 bg-white">
-    <label class="block font-bold text-[13px] mb-1">Alamat / Area</label>
-    <input type="text" id="alamat" placeholder="Contoh: Bogor Kota" oninput="simpanForm()" class="w-full p-3.5 rounded-xl mb-3 text-sm text-slate-900 bg-white">
-    <label class="block font-bold text-[13px] mb-1">Pilih Paket</label>
-    <select id="paketPilih" onchange="simpanForm()" class="w-full p-3.5 rounded-xl mb-4 text-sm text-slate-900 bg-white">
+<!-- FORM -->
+<div class="mt-6 p-6 rounded-[28px] bg-slate-900 text-white shadow-xl">
+    <h2 class="text-[22px] font-semibold text-center">Pesan Sekarang 📝</h2>
+    <p class="text-center text-[13px] font-bold text-slate-300 mt-1 mb-4">Isi 10 detik, langsung masuk ke WA kami.</p>
+    <label class="block font-extrabold text-[13px] mb-1">Nama Kamu</label>
+    <input type="text" id="nama" placeholder="Contoh: Dicky" oninput="simpanForm()" class="w-full p-3.5 rounded-2xl mb-3 text-sm text-slate-900 bg-white font-bold">
+    <label class="block font-extrabold text-[13px] mb-1">Alamat / Area</label>
+    <input type="text" id="alamat" placeholder="Contoh: Bogor Kota" oninput="simpanForm()" class="w-full p-3.5 rounded-2xl mb-3 text-sm text-slate-900 bg-white font-bold">
+    <label class="block font-extrabold text-[13px] mb-1">Pilih Paket</label>
+    <select id="paketPilih" onchange="simpanForm()" class="w-full p-3.5 rounded-2xl mb-4 text-sm text-slate-900 bg-white font-bold">
         <option value="Paket Basic">Paket Basic - Rp 950rb</option><option value="Paket Pro">Paket Pro - Rp 2,5jt</option><option value="Paket Sultan">Paket Sultan - Rp 5jt+</option><option value="Konsultasi Dulu">Konsultasi Dulu</option>
     </select>
-    <button class="w-full bg-green-500 font-bold py-4 rounded-full text-[15px] shadow-lg" onclick="kirimWA()">Kirim ke WA →</button>
+    <button class="w-full bg-green-500 font-extrabold py-4 rounded-full text-[15px] shadow-lg" onclick="kirimWA()">Kirim ke WA →</button>
 </div>
 
 </div>
 
-<div class="max-w-6xl mx-auto px-4 mt-8 text-center text-[12px] text-slate-400">
+<div class="max-w-6xl mx-auto px-4 mt-8 text-center text-[12px] font-bold text-slate-400">
     <p>SmartHome Bogor • WA 08137000432 • Melayani JABODETABEK</p>
 </div>
 
-<a href="https://wa.me/628137000432" class="fixed bottom-4 right-4 bg-slate-900 text-white font-bold px-5 py-3.5 rounded-full shadow-xl text-sm z-50">💬 Chat WA</a>
+<a href="https://wa.me/628137000432" class="fixed bottom-4 right-4 bg-slate-900 text-white font-extrabold px-5 py-3.5 rounded-full shadow-xl text-sm z-50">💬 Chat WA</a>
 
 <script>
   function bukaFaq(id) { let el = document.getElementById(id); el.classList.toggle("buka"); }
