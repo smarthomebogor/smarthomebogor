@@ -100,8 +100,8 @@ input[type=time], input[type=range] { width: 100%; margin-top: 8px; }
 <script>
 let data = JSON.parse(localStorage.getItem("smarthomeApp") || '{"tamu":false,"kamar":false,"teras":false,"pompa":false,"ac":false}');
 
-// ===== MQTT KE WOKWI - PAKAI WSS 8884 BIAR BISA DI HTTPS =====
-let mqttClient = new 【entity-Paho¦canonical_name=Paho】.MQTT.Client("broker.hivemq.com", 8884, "/mqtt", "app-dicky-" + Math.floor(Math.random()*10000));
+// ===== MQTT KE WOKWI - WSS 8884 =====
+let mqttClient = new Paho.MQTT.Client("broker.hivemq.com", 8884, "/mqtt", "app-dicky-" + Math.floor(Math.random()*10000));
 mqttClient.onConnectionLost = function() {
   document.getElementById('statusKonek').innerText = "🔴 Putus, nyambung lagi...";
   document.getElementById('statusKonek').className = "status-konek konek-off";
@@ -115,7 +115,7 @@ mqttClient.connect({ onSuccess: onConnect, useSSL: true });
 
 function kirimKeWokwi(pesan) {
   try {
-    let msg = new 【entity-Paho¦canonical_name=Paho】.MQTT.Message(pesan);
+    let msg = new Paho.MQTT.Message(pesan);
     msg.destinationName = "smarthomebogor/lampu/tamu";
     mqttClient.send(msg);
   } catch(e) { console.log("Belum tersambung"); }
