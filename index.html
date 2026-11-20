@@ -10,32 +10,39 @@
         img { max-width: 100%; height: auto; }
         .faq-jawaban { display: none; }
         .faq-jawaban.buka { display: block; }
-        /* HERO BACKGROUND BARU - FOTO + GRADASI */
+        /* HERO BACKGROUND HD SMARTHOME - BARU */
         .hero-bg {
-            background: linear-gradient(rgba(15,23,42,0.85), rgba(30,58,138,0.85)), url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1200');
+            background: linear-gradient(180deg, rgba(2,6,23,0.72) 0%, rgba(15,23,42,0.65) 50%, rgba(30,58,138,0.78) 100%), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
         }
-        /* CARD BIAR LEBIH HIDUP */
+        /* Kalau di HP, biar fotonya tetap fokus tengah */
+        @media (max-width: 768px) {
+            .hero-bg { min-height: 460px; background-position: center 30%; }
+        }
         .card { transition: transform 0.2s; }
         .card:hover { transform: translateY(-3px); }
+        .glass { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); }
     </style>
 </head>
 <body class="text-slate-800 overflow-x-hidden text-base pb-20">
 
-<!-- HERO - BACKGROUND UDAH DIBAGUSIN -->
+<!-- HERO - BACKGROUND HD SMARTHOME -->
 <div class="hero-bg text-white text-center px-4 py-14 w-full">
-    <div class="max-w-3xl mx-auto">
-        <p class="text-xs bg-white/20 backdrop-blur inline-block px-4 py-1.5 rounded-full border border-white/30">⭐ MELAYANI BOGOR & JABODETABEK</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-4 drop-shadow-lg">Rumah Jadi Pintar,<br><span class="text-yellow-300">Tanpa Ribet</span></h1>
-        <p class="mt-4 text-sm md:text-base text-slate-200 leading-relaxed">Jasa pasang Smart Home di Bogor.<br>Lampu, 【entity-CCTV¦canonical_name=CCTV】, Kunci Digital, semua bisa dikontrol dari HP.</p>
-        <a href="https://wa.me/628137000432" class="inline-block mt-6 bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-xl">Konsultasi Gratis via WA</a>
-        <p class="mt-3 text-xs text-slate-300">✅ Survei Gratis untuk area JABODETABEK • Tanpa DP</p>
-        <div class="flex justify-center gap-4 mt-6 text-xs">
-            <div class="bg-white/10 rounded-lg px-3 py-2 border border-white/20">🏠 100+ Rumah Terpasang</div>
-            <div class="bg-white/10 rounded-lg px-3 py-2 border border-white/20">⭐ 4.9 / 5 Rating</div>
-            <div class="bg-white/10 rounded-lg px-3 py-2 border border-white/20">🛡️ Garansi 30 Hari</div>
+    <div class="max-w-3xl mx-auto w-full">
+        <p class="text-xs glass inline-block px-4 py-1.5 rounded-full">⭐ MELAYANI BOGOR & JABODETABEK</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">Rumah Jadi Pintar,<br><span class="text-yellow-300">Tanpa Ribet</span></h1>
+        <p class="mt-4 text-sm md:text-base text-slate-100 leading-relaxed drop-shadow">Jasa pasang Smart Home di Bogor.<br>Lampu, CCTV, Kunci Digital, semua bisa dikontrol dari HP.</p>
+        <a href="https://wa.me/628137000432" class="inline-block mt-6 bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-[0_10px_25px_rgba(34,197,94,0.5)]">Konsultasi Gratis via WA</a>
+        <p class="mt-3 text-xs text-slate-200">✅ Survei Gratis untuk area JABODETABEK • Tanpa DP • Bayar Setelah Terpasang</p>
+        <div class="flex justify-center gap-2 md:gap-4 mt-6 text-[11px] md:text-xs">
+            <div class="glass rounded-xl px-3 py-2.5">🏠 100+ Rumah<br>Terpasang</div>
+            <div class="glass rounded-xl px-3 py-2.5">⭐ 4.9 / 5<br>Rating Pelanggan</div>
+            <div class="glass rounded-xl px-3 py-2.5">🛡️ Garansi<br>30 Hari</div>
         </div>
     </div>
 </div>
@@ -49,7 +56,7 @@
 <div class="bg-white mt-4 p-5 rounded-2xl shadow card">
     <h2 class="text-xl font-bold mb-2">Layanan Kami</h2>
     <p class="py-1 text-sm">✅ Lampu & Saklar Pintar - Rp 180.000 / titik</p>
-    <p class="py-1 text-sm">✅ 【entity-CCTV¦canonical_name=CCTV】 & Doorbell Kamera - Rp 750.000 / titik</p>
+    <p class="py-1 text-sm">✅ CCTV & Doorbell Kamera - Rp 750.000 / titik</p>
     <p class="py-1 text-sm">✅ Smart Lock / Kunci Digital - Rp 1.200.000 / unit</p>
     <p class="py-1 text-sm">✅ Google Home & Alexa Setup - Rp 350.000 / paket</p>
     <p class="py-1 text-sm">✅ Sensor Gerak, Asap & Banjir - Rp 250.000 / titik</p>
@@ -58,7 +65,7 @@
 <h2 class="text-xl font-bold text-center mt-6">Harga Paket</h2>
 <div class="grid md:grid-cols-3 gap-4 mt-3">
     <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center card"><h3 class="font-bold text-sm">Paket Basic</h3><h2 class="text-xl font-bold my-2">Rp 950rb</h2><p class="text-sm">4 Lampu Pintar + 2 Stop Kontak Pintar</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow border-2 border-blue-600 text-center card relative"><p class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">PALING LARIS</p><h3 class="font-bold text-sm">Paket Pro</h3><h2 class="text-xl font-bold my-2">Rp 2,5jt</h2><p class="text-sm">Basic + 【entity-CCTV¦canonical_name=CCTV】 2 Titik + Smart Lock</p></div>
+    <div class="bg-white p-5 rounded-2xl shadow border-2 border-blue-600 text-center card relative"><p class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">PALING LARIS</p><h3 class="font-bold text-sm">Paket Pro</h3><h2 class="text-xl font-bold my-2">Rp 2,5jt</h2><p class="text-sm">Basic + CCTV 2 Titik + Smart Lock</p></div>
     <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center card"><h3 class="font-bold text-sm">Paket Sultan</h3><h2 class="text-xl font-bold my-2">Rp 5jt+</h2><p class="text-sm">Full Rumah Pintar + Sensor + Gorden Otomatis</p></div>
 </div>
 
@@ -81,7 +88,7 @@
     <h3 id="hargaTampil" class="font-bold text-lg mt-2">Harga: Rp 950rb</h3>
     <p id="descTampil" class="text-sm">4 Lampu Pintar + 2 Stop Kontak Pintar</p>
     <div class="w-full overflow-hidden rounded-xl mt-3">
-        <img id="fotoTampil" src="https://images.unsplash.com/photo-1558002038-1055907df827?w=800" style="width:100%; max-width:100%; height:260px; object-fit:cover; display:block;">
+        <img id="fotoTampil" src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80" style="width:100%; max-width:100%; height:260px; object-fit:cover; display:block;">
     </div>
 </div>
 
@@ -97,7 +104,7 @@
 <div class="mt-6">
     <h2 class="text-xl font-bold text-center">Kata Mereka Yang Udah Pasang</h2>
     <div class="grid md:grid-cols-3 gap-4 mt-3">
-        <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor."</p><p class="font-bold text-sm mt-3">- Budi, Bogor Kota</p><p class="text-xs text-slate-400">Pasang 【entity-CCTV¦canonical_name=CCTV】 2 Titik</p></div>
+        <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor."</p><p class="font-bold text-sm mt-3">- Budi, Bogor Kota</p><p class="text-xs text-slate-400">Pasang CCTV 2 Titik</p></div>
         <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Lampu bisa dimatiin dari HP, anak-anak seneng banget. Teknisi ramah, dijelasin sampai bisa."</p><p class="font-bold text-sm mt-3">- Sari, Cibinong</p><p class="text-xs text-slate-400">Pasang Lampu Pintar 8 Titik</p></div>
         <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Smart Lock enak banget, tidak bawa kunci lagi. Bayar setelah terpasang, jadi aman."</p><p class="font-bold text-sm mt-3">- Andi, Depok</p><p class="text-xs text-slate-400">Pasang Smart Lock + Doorbell</p></div>
     </div>
@@ -153,7 +160,7 @@
   function hitung() {
     let total = 0;
     if (document.getElementById("lampu").checked) total += 180000;
-    if (document.getElementById("【entity-cctv¦canonical_name=CCTV】").checked) total += 750000;
+    if (document.getElementById("cctv").checked) total += 750000;
     if (document.getElementById("kunci").checked) total += 1200000;
     if (document.getElementById("google").checked) total += 350000;
     document.getElementById("total").innerText = "Total: Rp " + total.toLocaleString("id-ID");
@@ -163,9 +170,9 @@
     let harga = document.getElementById("hargaTampil");
     let desc = document.getElementById("descTampil");
     let foto = document.getElementById("fotoTampil");
-    if (pilih == "basic") { harga.innerText = "Harga: Rp 950rb"; desc.innerText = "4 Lampu Pintar + 2 Stop Kontak Pintar"; foto.src = "https://images.unsplash.com/photo-1558002038-1055907df827?w=800"; }
-    if (pilih == "pro") { harga.innerText = "Harga: Rp 2,5jt"; desc.innerText = "Basic + CCTV 2 Titik + Smart Lock"; foto.src = "https://images.unsplash.com/photo-1543512214-318c7553f230?w=800"; }
-    if (pilih == "sultan") { harga.innerText = "Harga: Rp 5jt+"; desc.innerText = "Full Rumah Pintar + Sensor + Gorden Otomatis"; foto.src = "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800"; }
+    if (pilih == "basic") { harga.innerText = "Harga: Rp 950rb"; desc.innerText = "4 Lampu Pintar + 2 Stop Kontak Pintar"; foto.src = "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80"; }
+    if (pilih == "pro") { harga.innerText = "Harga: Rp 2,5jt"; desc.innerText = "Basic + CCTV 2 Titik + Smart Lock"; foto.src = "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=1200&q=80"; }
+    if (pilih == "sultan") { harga.innerText = "Harga: Rp 5jt+"; desc.innerText = "Full Rumah Pintar + Sensor + Gorden Otomatis"; foto.src = "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1200&q=80"; }
   }
   function hitungLampu() {
     let jumlah = document.getElementById("jumlahLampu").value;
