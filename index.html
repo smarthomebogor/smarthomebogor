@@ -6,34 +6,50 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; }
+        body { margin: 0; background: #f1f5f9; }
         img { max-width: 100%; height: auto; }
         .faq-jawaban { display: none; }
         .faq-jawaban.buka { display: block; }
+        /* HERO BACKGROUND BARU - FOTO + GRADASI */
+        .hero-bg {
+            background: linear-gradient(rgba(15,23,42,0.85), rgba(30,58,138,0.85)), url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1200');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* CARD BIAR LEBIH HIDUP */
+        .card { transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-800 overflow-x-hidden text-base pb-20">
+<body class="text-slate-800 overflow-x-hidden text-base pb-20">
 
-<div class="bg-slate-900 text-white text-center px-4 py-10 w-full">
+<!-- HERO - BACKGROUND UDAH DIBAGUSIN -->
+<div class="hero-bg text-white text-center px-4 py-14 w-full">
     <div class="max-w-3xl mx-auto">
-        <p class="text-xs bg-slate-700 inline-block px-3 py-1 rounded-full">⭐ MELAYANI BOGOR & JABODETABEK</p>
-        <h1 class="text-2xl md:text-4xl font-bold leading-snug mt-3">Rumah Jadi Pintar,<br>Tanpa Ribet</h1>
-        <p class="mt-3 text-sm md:text-base text-slate-300 leading-relaxed">Jasa pasang Smart Home di Bogor.<br>Lampu, CCTV, Kunci Digital, semua bisa dikontrol dari HP.</p>
-        <a href="https://wa.me/628137000432" class="inline-block mt-5 bg-green-500 text-white font-bold px-6 py-3 rounded-full text-sm shadow-lg">Konsultasi Gratis via WA</a>
-        <p class="mt-3 text-xs text-slate-400">Survei Gratis untuk area JABODETABEK</p>
+        <p class="text-xs bg-white/20 backdrop-blur inline-block px-4 py-1.5 rounded-full border border-white/30">⭐ MELAYANI BOGOR & JABODETABEK</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-4 drop-shadow-lg">Rumah Jadi Pintar,<br><span class="text-yellow-300">Tanpa Ribet</span></h1>
+        <p class="mt-4 text-sm md:text-base text-slate-200 leading-relaxed">Jasa pasang Smart Home di Bogor.<br>Lampu, 【entity-CCTV¦canonical_name=CCTV】, Kunci Digital, semua bisa dikontrol dari HP.</p>
+        <a href="https://wa.me/628137000432" class="inline-block mt-6 bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-xl">Konsultasi Gratis via WA</a>
+        <p class="mt-3 text-xs text-slate-300">✅ Survei Gratis untuk area JABODETABEK • Tanpa DP</p>
+        <div class="flex justify-center gap-4 mt-6 text-xs">
+            <div class="bg-white/10 rounded-lg px-3 py-2 border border-white/20">🏠 100+ Rumah Terpasang</div>
+            <div class="bg-white/10 rounded-lg px-3 py-2 border border-white/20">⭐ 4.9 / 5 Rating</div>
+            <div class="bg-white/10 rounded-lg px-3 py-2 border border-white/20">🛡️ Garansi 30 Hari</div>
+        </div>
     </div>
 </div>
 
 <div class="max-w-5xl mx-auto px-4 w-full">
 
-<div class="bg-green-100 border border-green-300 p-4 text-center rounded-xl mt-4">
+<div class="bg-green-100 border border-green-300 p-4 text-center rounded-xl mt-4 shadow-sm">
     <p class="font-bold text-green-800 text-sm">🎉 PROMO: Survei + Konsultasi GRATIS - Tanpa DP, Bayar Setelah Terpasang</p>
 </div>
 
-<div class="bg-white mt-4 p-5 rounded-2xl shadow">
+<div class="bg-white mt-4 p-5 rounded-2xl shadow card">
     <h2 class="text-xl font-bold mb-2">Layanan Kami</h2>
     <p class="py-1 text-sm">✅ Lampu & Saklar Pintar - Rp 180.000 / titik</p>
-    <p class="py-1 text-sm">✅ CCTV & Doorbell Kamera - Rp 750.000 / titik</p>
+    <p class="py-1 text-sm">✅ 【entity-CCTV¦canonical_name=CCTV】 & Doorbell Kamera - Rp 750.000 / titik</p>
     <p class="py-1 text-sm">✅ Smart Lock / Kunci Digital - Rp 1.200.000 / unit</p>
     <p class="py-1 text-sm">✅ Google Home & Alexa Setup - Rp 350.000 / paket</p>
     <p class="py-1 text-sm">✅ Sensor Gerak, Asap & Banjir - Rp 250.000 / titik</p>
@@ -41,21 +57,21 @@
 
 <h2 class="text-xl font-bold text-center mt-6">Harga Paket</h2>
 <div class="grid md:grid-cols-3 gap-4 mt-3">
-    <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center"><h3 class="font-bold text-sm">Paket Basic</h3><h2 class="text-xl font-bold my-2">Rp 950rb</h2><p class="text-sm">4 Lampu Pintar + 2 Stop Kontak Pintar</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center"><h3 class="font-bold text-sm">Paket Pro</h3><h2 class="text-xl font-bold my-2">Rp 2,5jt</h2><p class="text-sm">Basic + CCTV 2 Titik + Smart Lock</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center"><h3 class="font-bold text-sm">Paket Sultan</h3><h2 class="text-xl font-bold my-2">Rp 5jt+</h2><p class="text-sm">Full Rumah Pintar + Sensor + Gorden Otomatis</p></div>
+    <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center card"><h3 class="font-bold text-sm">Paket Basic</h3><h2 class="text-xl font-bold my-2">Rp 950rb</h2><p class="text-sm">4 Lampu Pintar + 2 Stop Kontak Pintar</p></div>
+    <div class="bg-white p-5 rounded-2xl shadow border-2 border-blue-600 text-center card relative"><p class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">PALING LARIS</p><h3 class="font-bold text-sm">Paket Pro</h3><h2 class="text-xl font-bold my-2">Rp 2,5jt</h2><p class="text-sm">Basic + 【entity-CCTV¦canonical_name=CCTV】 2 Titik + Smart Lock</p></div>
+    <div class="bg-white p-5 rounded-2xl shadow border-2 border-slate-900 text-center card"><h3 class="font-bold text-sm">Paket Sultan</h3><h2 class="text-xl font-bold my-2">Rp 5jt+</h2><p class="text-sm">Full Rumah Pintar + Sensor + Gorden Otomatis</p></div>
 </div>
 
-<div class="bg-white mt-4 p-5 rounded-2xl shadow">
+<div class="bg-white mt-4 p-5 rounded-2xl shadow card">
     <h2 class="text-xl font-bold mb-2">Hitung Sendiri Harga Kamu</h2>
-    <label class="block py-1 text-sm"><input type="checkbox" id="lampu" onchange="hitung()"> Lampu Pintar (Rp 150rb)</label>
+    <label class="block py-1 text-sm"><input type="checkbox" id="lampu" onchange="hitung()"> Lampu Pintar (Rp 180rb)</label>
     <label class="block py-1 text-sm"><input type="checkbox" id="cctv" onchange="hitung()"> CCTV (Rp 750rb)</label>
     <label class="block py-1 text-sm"><input type="checkbox" id="kunci" onchange="hitung()"> Smart Lock (Rp 1,2jt)</label>
     <label class="block py-1 text-sm"><input type="checkbox" id="google" onchange="hitung()"> Google Home Setup (Rp 350rb)</label>
     <h3 id="total" class="font-bold text-lg mt-2">Total: Rp 0</h3>
 </div>
 
-<div class="bg-white mt-4 p-5 rounded-2xl shadow overflow-hidden">
+<div class="bg-white mt-4 p-5 rounded-2xl shadow overflow-hidden card">
     <h2 class="text-xl font-bold mb-2">Pilih Paket</h2>
     <select id="pilihPaket" onchange="gantiPaket()" class="w-full p-3 border rounded-lg text-sm">
         <option value="basic">Paket Basic</option>
@@ -69,7 +85,7 @@
     </div>
 </div>
 
-<div class="bg-white mt-4 p-5 rounded-2xl shadow">
+<div class="bg-white mt-4 p-5 rounded-2xl shadow card">
     <h2 class="text-xl font-bold mb-2">Hitung Biaya Pasang Lampu + Diskon</h2>
     <p class="mb-3 text-sm">Ketik jumlah titik lampu. Kalau 10 titik atau lebih, dapat diskon 10% otomatis!</p>
     <input type="number" id="jumlahLampu" placeholder="Contoh: 12" oninput="hitungLampu()" min="0" class="w-full p-3 border rounded-lg text-sm">
@@ -81,13 +97,13 @@
 <div class="mt-6">
     <h2 class="text-xl font-bold text-center">Kata Mereka Yang Udah Pasang</h2>
     <div class="grid md:grid-cols-3 gap-4 mt-3">
-        <div class="bg-white p-5 rounded-2xl shadow"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor."</p><p class="font-bold text-sm mt-3">- Budi, Bogor Kota</p><p class="text-xs text-slate-400">Pasang CCTV 2 Titik</p></div>
-        <div class="bg-white p-5 rounded-2xl shadow"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Lampu bisa dimatiin dari HP, anak-anak seneng banget. Teknisi ramah, dijelasin sampai bisa."</p><p class="font-bold text-sm mt-3">- Sari, Cibinong</p><p class="text-xs text-slate-400">Pasang Lampu Pintar 8 Titik</p></div>
-        <div class="bg-white p-5 rounded-2xl shadow"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Smart Lock enak banget, tidak bawa kunci lagi. Bayar setelah terpasang, jadi aman."</p><p class="font-bold text-sm mt-3">- Andi, Depok</p><p class="text-xs text-slate-400">Pasang Smart Lock + Doorbell</p></div>
+        <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor."</p><p class="font-bold text-sm mt-3">- Budi, Bogor Kota</p><p class="text-xs text-slate-400">Pasang 【entity-CCTV¦canonical_name=CCTV】 2 Titik</p></div>
+        <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Lampu bisa dimatiin dari HP, anak-anak seneng banget. Teknisi ramah, dijelasin sampai bisa."</p><p class="font-bold text-sm mt-3">- Sari, Cibinong</p><p class="text-xs text-slate-400">Pasang Lampu Pintar 8 Titik</p></div>
+        <div class="bg-white p-5 rounded-2xl shadow card"><p class="text-yellow-500">⭐⭐⭐⭐⭐</p><p class="text-sm mt-2">"Smart Lock enak banget, tidak bawa kunci lagi. Bayar setelah terpasang, jadi aman."</p><p class="font-bold text-sm mt-3">- Andi, Depok</p><p class="text-xs text-slate-400">Pasang Smart Lock + Doorbell</p></div>
     </div>
 </div>
 
-<div class="bg-white mt-6 p-5 rounded-2xl shadow">
+<div class="bg-white mt-6 p-5 rounded-2xl shadow card">
     <h2 class="text-xl font-bold mb-3">Pertanyaan Yang Sering Ditanyakan</h2>
     <div class="border-b py-3">
         <button onclick="bukaFaq('faq1')" class="w-full text-left font-bold text-sm flex justify-between">Berapa lama proses pemasangannya? <span>▼</span></button>
@@ -107,8 +123,7 @@
     </div>
 </div>
 
-<!-- FORM PEMESANAN - SEKARANG PALING MENCOLOK, BACKGROUND KUNING -->
-<div id="formOrder" class="mt-6 p-6 rounded-2xl shadow-lg" style="background:#fef9c3; border:3px solid #facc15;">
+<div id="formOrder" class="mt-6 p-6 rounded-2xl shadow-lg" style="background:linear-gradient(135deg, #fef9c3, #fde68a); border:3px solid #facc15;">
     <h2 class="text-2xl font-bold mb-1 text-center">📝 FORM PEMESANAN CEPAT</h2>
     <p class="text-center text-sm mb-4">Isi di bawah, langsung terkirim ke WA kami!</p>
     <label class="block font-bold text-sm mb-1">Nama Kamu:</label>
@@ -123,7 +138,6 @@
         <option value="Konsultasi Dulu">Konsultasi Dulu</option>
     </select>
     <button class="w-full bg-green-500 text-white font-bold py-4 rounded-lg text-base shadow" onclick="kirimWA()">Kirim ke WA ➤</button>
-    <p class="text-center text-xs mt-2 text-slate-500">Dengan klik Kirim, WA kamu akan terbuka otomatis.</p>
 </div>
 
 </div>
@@ -135,14 +149,11 @@
 <a href="https://wa.me/628137000432" class="fixed bottom-4 right-4 bg-green-500 text-white font-bold px-4 py-3 rounded-full shadow-lg text-sm z-50">💬 Chat WA</a>
 
 <script>
-  function bukaFaq(id) {
-    let el = document.getElementById(id);
-    el.classList.toggle("buka");
-  }
+  function bukaFaq(id) { let el = document.getElementById(id); el.classList.toggle("buka"); }
   function hitung() {
     let total = 0;
-    if (document.getElementById("lampu").checked) total += 150000;
-    if (document.getElementById("cctv").checked) total += 750000;
+    if (document.getElementById("lampu").checked) total += 180000;
+    if (document.getElementById("【entity-cctv¦canonical_name=CCTV】").checked) total += 750000;
     if (document.getElementById("kunci").checked) total += 1200000;
     if (document.getElementById("google").checked) total += 350000;
     document.getElementById("total").innerText = "Total: Rp " + total.toLocaleString("id-ID");
@@ -167,16 +178,16 @@
         detail.innerText = "Ketik jumlah titik lampu dulu ya, Dicky!";
         diskonBox.style.display = "none";
     } else {
-        let totalAwal = jumlah * 150000;
+        let totalAwal = jumlah * 180000;
         let totalAkhir = totalAwal;
         if (jumlah >= 10) {
             let diskon = totalAwal * 0.1;
             totalAkhir = totalAwal - diskon;
             diskonBox.style.display = "block";
-            detail.innerText = jumlah + " titik x Rp 150rb = Rp " + totalAwal.toLocaleString("id-ID") + " - Diskon 10% (Rp " + diskon.toLocaleString("id-ID") + ") = Rp " + totalAkhir.toLocaleString("id-ID");
+            detail.innerText = jumlah + " titik x Rp 180rb = Rp " + totalAwal.toLocaleString("id-ID") + " - Diskon 10% (Rp " + diskon.toLocaleString("id-ID") + ") = Rp " + totalAkhir.toLocaleString("id-ID");
         } else {
             diskonBox.style.display = "none";
-            detail.innerText = jumlah + " titik lampu x Rp 150rb = Rp " + totalAkhir.toLocaleString("id-ID") + ". Pasang 10 titik biar dapat diskon 10%!";
+            detail.innerText = jumlah + " titik lampu x Rp 180rb = Rp " + totalAkhir.toLocaleString("id-ID") + ". Pasang 10 titik biar dapat diskon 10%!";
         }
         hasil.innerText = "Total: Rp " + totalAkhir.toLocaleString("id-ID");
     }
