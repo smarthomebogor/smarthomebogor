@@ -3,176 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmartHome Bogor — Rumah Yang Mengerti Kamu</title>
+<title>SmartHome Bogor - Kontrol Rumah Dari HP</title>
 <link rel="icon" href="icon-v2.png?v=2">
 <link rel="apple-touch-icon" href="icon-v2.png?v=2">
-<meta name="theme-color" content="#0B1220">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0F172A">
 <style>
-* { box-sizing: border-box; }
-body { margin: 0; background: #F7F5F0; color: #0B1220; font-family: 'Inter', system-ui, sans-serif; }
+* { box-sizing: border-box; font-family: -apple-system, system-ui, sans-serif; }
+body { margin: 0; background: #F8FAFC; color: #0F172A; }
 a { text-decoration: none; }
-.serif { font-family: 'Playfair Display', serif; }
-.gold { color: #C9A86A; }
-.topbar { background: #0B1220; color: #E8DDC8; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 10px 16px; }
-.topbar span { color: #C9A86A; }
-.hero { background: #0B1220; color: white; padding: 0 0 42px; overflow: hidden; }
-.nav { max-width: 1080px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; background: white; }
-.brand b { font-size: 15px; letter-spacing: 0.04em; }
-.brand span { display: block; font-size: 10px; color: #A8B0C2; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
-.nav a { color: white; font-size: 13px; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); padding: 10px 18px; border-radius: 999px; }
-.hero-inner { max-width: 1080px; margin: 0 auto; padding: 28px 20px 0; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; }
-.eyebrow { color: #C9A86A; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 1.05; margin: 14px 0 14px; font-weight: 700; }
-.hero h1 em { font-style: italic; color: #C9A86A; font-weight: 600; }
-.hero p { color: #CBD5E1; font-size: 15px; line-height: 1.7; max-width: 480px; margin: 0; }
-.cta-row { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
-.btn { padding: 15px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; display: inline-block; }
-.btn-gold { background: #C9A86A; color: #0B1220; }
-.btn-ghost { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
-.meta { display: flex; gap: 18px; margin-top: 26px; flex-wrap: wrap; }
-.meta div b { font-size: 18px; }
-.meta div span { display: block; font-size: 11px; color: #94A3B8; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
-.hero-card { background: #FFFFFF; color: #0B1220; border-radius: 24px; padding: 22px; box-shadow: 0 24px 50px rgba(0,0,0,0.35); }
-.hero-card .row { display: flex; justify-content: space-between; align-items: center; }
-.pill { font-size: 11px; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 6px 10px; border-radius: 999px; }
-.hero-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin: 14px 0 4px; }
-.hero-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
-.kode-box { background: #F7F5F0; border-radius: 14px; padding: 14px; margin-top: 16px; text-align: center; }
-.kode-box span { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #94A3B8; font-weight: 700; }
-.kode-box b { display: block; font-size: 26px; letter-spacing: 0.18em; margin-top: 4px; }
-.hero-card .btn { width: 100%; text-align: center; margin-top: 14px; }
-.section { max-width: 1080px; margin: 0 auto; padding: 44px 20px 10px; }
-.kicker { color: #B08D4A; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; }
-.section h2 { font-family: 'Playfair Display', serif; font-size: 32px; line-height: 1.2; margin: 10px 0 8px; }
-.section > p { color: #64748B; font-size: 14px; line-height: 1.7; max-width: 640px; margin: 0; }
-.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 22px; }
-.card { background: white; border-radius: 20px; padding: 20px; border: 1px solid #EDE8DD; }
-.card .num { font-family: 'Playfair Display', serif; color: #C9A86A; font-size: 13px; letter-spacing: 0.1em; }
-.card h3 { font-size: 16px; margin: 10px 0 6px; }
-.card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
-.panel { background: white; border-radius: 20px; padding: 22px; border: 1px solid #EDE8DD; }
-.harga-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #F1EDE3; }
-.harga-row:last-child { border-bottom: none; }
-.harga-row b { font-size: 14px; }
-.harga-row span { display: block; font-size: 12px; color: #94A3B8; margin-top: 2px; }
-.harga { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; white-space: nowrap; }
-.langkah { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #F1EDE3; }
-.langkah:last-child { border-bottom: none; }
-.no { width: 34px; height: 34px; border-radius: 999px; border: 1px solid #C9A86A; color: #B08D4A; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
-.quote { background: #0B1220; color: white; border-radius: 22px; padding: 28px; margin-top: 22px; }
-.quote p { font-family: 'Playfair Display', serif; font-size: 20px; line-height: 1.5; margin: 0; font-style: italic; }
-.quote b { display: block; margin-top: 14px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A86A; }
-.bayar { background: #FFFFFF; border: 1px solid #EDE8DD; border-radius: 22px; padding: 24px; display: grid; grid-template-columns: 1fr 0.8fr; gap: 20px; align-items: center; margin-top: 22px; }
-.bayar h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin: 0 0 8px; }
-.bayar p { font-size: 13px; color: #64748B; line-height: 1.7; margin: 0; }
-.bayar .rekening { background: #F7F5F0; border-radius: 14px; padding: 16px; text-align: center; }
-.footer { text-align: center; padding: 28px 20px 90px; font-size: 12px; color: #94A3B8; }
-.wa-float { position: fixed; bottom: 18px; right: 16px; background: #0B1220; color: white; padding: 13px 20px; border-radius: 999px; font-weight: 700; font-size: 14px; box-shadow: 0 14px 30px rgba(0,0,0,0.25); z-index: 99; border: 1px solid #C9A86A; }
-@media (max-width: 760px) {
-  .hero-inner, .grid-3, .split, .bayar { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 38px; }
-  .nav a { padding: 9px 14px; }
-  .section { padding: 32px 16px 6px; }
-}
+.wrap { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+.hero { background: #0F172A; color: white; border-radius: 0 0 28px 28px; padding: 26px 20px 28px; text-align: center; }
+.hero img { width: 64px; height: 64px; border-radius: 16px; object-fit: cover; background: white; }
+.hero h1 { font-size: 28px; line-height: 1.3; margin: 14px 0 8px; letter-spacing: -0.01em; }
+.hero p { color: #CBD5E1; font-size: 14px; line-height: 1.7; margin: 0 auto; max-width: 400px; }
+.btn { display: block; padding: 15px; border-radius: 999px; font-weight: 700; font-size: 14px; margin-top: 12px; text-align: center; }
+.btn-hijau { background: #22C55E; color: white; }
+.btn-putih { background: white; color: #0F172A; }
+h2 { font-size: 18px; margin: 28px 0 6px; }
+.sub { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0 0 14px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card { background: white; border-radius: 18px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+.card span { font-size: 24px; }
+.card b { display: block; font-size: 14px; margin-top: 8px; }
+.card p { font-size: 12px; color: #64748B; line-height: 1.6; margin: 4px 0 0; }
+.harga-card { background: white; border-radius: 16px; padding: 15px 16px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+.harga-card b { font-size: 14px; }
+.harga-card span { display: block; font-size: 12px; color: #94A3B8; margin-top: 2px; }
+.harga { font-weight: 800; font-size: 14px; white-space: nowrap; }
+.langkah { display: flex; gap: 12px; background: white; border-radius: 16px; padding: 15px; margin-bottom: 10px; align-items: flex-start; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+.no { width: 28px; height: 28px; background: #0F172A; color: white; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.langkah b { font-size: 14px; }
+.langkah p { font-size: 13px; color: #475569; line-height: 1.6; margin: 4px 0 0; }
+.bayar { background: #0F172A; color: white; border-radius: 20px; padding: 20px; text-align: center; margin: 28px 0 16px; }
+.bayar b { font-size: 15px; }
+.bayar p { font-size: 13px; color: #CBD5E1; line-height: 1.7; margin: 8px 0 0; }
+.bayar .rekening { font-size: 22px; font-weight: 800; letter-spacing: 0.02em; margin-top: 8px; }
+.wa-float { position: fixed; bottom: 16px; right: 16px; background: #22C55E; color: white; padding: 12px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.18); z-index: 99; }
+.footer { text-align: center; font-size: 11px; color: #94A3B8; padding: 10px 0 90px; }
 </style>
 </head>
 <body>
 
-<div class="topbar">Bogor &nbsp;•&nbsp; <span>Smart Living, Tanpa Ribet</span> &nbsp;•&nbsp; 1 Aplikasi Untuk Semua Rumah</div>
-
-<header class="hero">
-<div class="nav">
-<div class="brand"><img src="icon-v2.png?v=2" alt="SmartHome Bogor"><div><b>SMARTHOME BOGOR</b><span>Live Beautifully</span></div></div>
-<a href="app.html">Buka Aplikasi →</a>
+<div class="hero">
+<img src="icon-v2.png?v=2" alt="SmartHome Bogor">
+<h1>Rumah Kamu,<br>Dikontrol Dari HP.</h1>
+<p>1 aplikasi untuk semua rumah. Lampu, CCTV, Gas, Pompa, AC, GPS — semua dari HP, dari mana saja.</p>
+<a href="app.html" class="btn btn-hijau">🚀 BUKA APLIKASI</a>
+<a href="https://wa.me/6281234567890?text=Halo%20SmartHome%20Bogor,%20saya%20mau%20tanya%20harga" class="btn btn-putih">💬 Tanya Harga di WhatsApp</a>
+<p style="font-size:11px; color:#94A3B8; margin:12px 0 0">Sudah punya Kode Rumah? Buka aplikasi, masukkan kode, langsung bisa dipakai.</p>
 </div>
 
-<div class="hero-inner">
-<div>
-<div class="eyebrow">SmartHome • Bogor</div>
-<h1>Rumah yang<br><em>mengerti</em> kamu,<br>dari mana saja.</h1>
-<p>Saat kamu di kantor, rumah tetap terjaga. Lampu, CCTV, gas, pompa, AC, dan GPS — semua tenang, semua dari satu aplikasi yang sama.</p>
-<div class="cta-row">
-<a href="app.html" class="btn btn-gold">Buka Aplikasi Saya →</a>
-<a href="https://wa.me/6281234567890?text=Halo%20SmartHome%20Bogor,%20saya%20mau%20konsultasi%20pasang" class="btn btn-ghost">Konsultasi via WhatsApp</a>
-</div>
-<div class="meta">
-<div><b>6+</b><span>Fitur Dalam 1 App</span></div>
-<div><b>1 App</b><span>Untuk Semua Customer</span></div>
-<div><b>100%</b><span>Kontrol Dari HP</span></div>
-</div>
+<div class="wrap">
+<h2>Apa yang bisa dikontrol?</h2>
+<p class="sub">Semua dari 1 app yang sama, tidak usah install app beda-beda.</p>
+<div class="grid">
+<div class="card"><span>💡</span><b>Lampu</b><p>Matiin lampu yang kelupaan dari kantor.</p></div>
+<div class="card"><span>📷</span><b>CCTV</b><p>Lihat rumah dari HP.</p></div>
+<div class="card"><span>🔥</span><b>Gas Bocor</b><p>Gas bocor langsung ketahuan.</p></div>
+<div class="card"><span>💧</span><b>Pompa Air</b><p>Toren penuh, pompa mati sendiri.</p></div>
+<div class="card"><span>❄️</span><b>AC / Kipas</b><p>Nyalain AC sebelum sampai rumah.</p></div>
+<div class="card"><span>📍</span><b>GPS Tracker</b><p>Motor / mobil ketahuan posisinya.</p></div>
 </div>
 
-<div class="hero-card">
-<div class="row"><b style="font-size:13px; letter-spacing:0.08em">APLIKASI PELANGGAN</b><span class="pill">● Aktif</span></div>
-<h3>Sudah punya Kode Rumah?</h3>
-<p>Masukkan kode yang diberikan teknisi kami. Contohnya seperti di bawah ini. Setelah itu, aplikasi ini hanya mengontrol rumah kamu.</p>
-<div class="kode-box"><span>Kode Rumah Kamu</span><b>BOGOR — 01</b></div>
-<a href="app.html" class="btn" style="background:#0B1220; color:white">Masukkan Kode & Buka Aplikasi →</a>
-<p style="text-align:center; font-size:11px; margin-top:10px">Belum punya kode? Chat kami, teknisi akan pasangkan untuk kamu.</p>
-</div>
-</div>
-</header>
+<h2>Harga Transparan</h2>
+<p class="sub">Per-point, tidak ada biaya tersembunyi.</p>
+<div class="harga-card"><div><b>Lampu Pintar</b><span>Per titik lampu</span></div><div class="harga">Rp 180rb</div></div>
+<div class="harga-card"><div><b>CCTV</b><span>Per titik kamera</span></div><div class="harga">Rp 750rb</div></div>
+<div class="harga-card"><div><b>Sensor Gas / Gerak</b><span>Per sensor</span></div><div class="harga">Rp 250rb</div></div>
+<div class="harga-card"><div><b>Smart Lock</b><span>Per pintu</span></div><div class="harga">Rp 1,2jt</div></div>
+<p style="font-size:12px; color:#94A3B8; margin-top:6px">Contoh: 3 lampu + 1 CCTV = Rp 1.290.000</p>
 
-<main>
-<section class="section">
-<div class="kicker">Apa yang bisa kamu kontrol</div>
-<h2>Semua yang penting,<br>dalam satu tempat yang tenang.</h2>
-<p>Tidak ada banyak aplikasi, tidak ada banyak remote. Satu aplikasi, semua rumah, semua terasa ringan.</p>
-<div class="grid-3">
-<div class="card"><div class="num">01 — CAHAYA</div><h3>Lampu</h3><p>Lampu yang tertinggal menyala, matikan dari kantor. Pulang ke rumah yang sudah terang.</p></div>
-<div class="card"><div class="num">02 — KEAMANAN</div><h3>CCTV</h3><p>Lihat rumah dari HP. Ada gerakan, kamu langsung tahu.</p></div>
-<div class="card"><div class="num">03 — KESELAMATAN</div><h3>Sensor Gas</h3><p>Gas bocor terdeteksi lebih awal, sebelum menjadi masalah.</p></div>
-<div class="card"><div class="num">04 — AIR</div><h3>Pompa & Toren</h3><p>Toren penuh, pompa berhenti sendiri. Tidak ada lagi air meluber.</p></div>
-<div class="card"><div class="num">05 — UDARA</div><h3>AC & Kipas</h3><p>Nyalakan AC sebelum sampai rumah. Pulang, rumah sudah sejuk.</p></div>
-<div class="card"><div class="num">06 — KENDARAAN</div><h3>GPS Tracker</h3><p>Motor dan mobil terlihat posisinya, di peta, dari HP kamu.</p></div>
-</div>
-</section>
+<h2>Cara Pasang</h2>
+<div class="langkah"><div class="no">1</div><div><b>Chat WhatsApp</b><p>Bilang mau pasang apa, kami kasih hitungan harga.</p></div></div>
+<div class="langkah"><div class="no">2</div><div><b>Teknisi Datang Pasang</b><p>Pasang, tes sampai nyala semua.</p></div></div>
+<div class="langkah"><div class="no">3</div><div><b>Dapat Kode Rumah</b><p>Contoh: BOGOR01. Masukkan di aplikasi, langsung kontrol rumah kamu.</p></div></div>
 
-<section class="section">
-<div class="kicker">Harga yang jujur</div>
-<h2>Transparan, per-point.<br>Tidak ada biaya yang disembunyikan.</h2>
-<div class="split">
-<div class="panel">
-<div class="harga-row"><div><b>Lampu Pintar</b><span>Per titik lampu</span></div><div class="harga">Rp 180rb</div></div>
-<div class="harga-row"><div><b>CCTV</b><span>Per titik kamera</span></div><div class="harga">Rp 750rb</div></div>
-<div class="harga-row"><div><b>Sensor Gas / Gerak</b><span>Per sensor</span></div><div class="harga">Rp 250rb</div></div>
-<div class="harga-row"><div><b>Smart Lock</b><span>Per pintu</span></div><div class="harga">Rp 1,2jt</div></div>
-<p style="font-size:12px; color:#94A3B8; margin-top:14px">Contoh: 3 lampu + 1 CCTV = Rp 1.290.000. Itu saja.</p>
-</div>
-<div class="panel">
-<div style="font-size:11px; letter-spacing:0.18em; color:#B08D4A; font-weight:700">CARA KERJA</div>
-<div class="langkah"><div class="no">1</div><div><b>Chat WhatsApp</b><p style="font-size:13px; color:#64748B; margin:4px 0 0; line-height:1.6">Ceritakan rumah kamu, kami hitungkan biayanya dengan jujur.</p></div></div>
-<div class="langkah"><div class="no">2</div><div><b>Teknisi Datang & Memasang</b><p style="font-size:13px; color:#64748B; margin:4px 0 0; line-height:1.6">Rapi, dites sampai semua menyala dengan baik.</p></div></div>
-<div class="langkah"><div class="no">3</div><div><b>Kamu Dapat Kode Rumah</b><p style="font-size:13px; color:#64748B; margin:4px 0 0; line-height:1.6">Masukkan kode itu di aplikasi. Aplikasi ini hanya mengontrol rumah kamu.</p></div></div>
-</div>
-</div>
-
-<div class="quote">
-<p>“Pulang kerja, lampu yang lupa dimatikan tinggal dimatikan dari HP. Tagihan listrik langsung terasa bedanya. Rumah terasa lebih tenang.”</p>
-<b>— Ibu Rina • Bogor Kota • Pelanggan SmartHome Bogor</b>
-</div>
-</section>
-
-<section class="section">
-<div class="kicker">Pembayaran</div>
-<h2>Semudah memesan,<br>semudah membayar.</h2>
 <div class="bayar">
-<div><h3>Transfer atau QRIS</h3><p>Pembayaran pemasangan melalui transfer bank atau scan QRIS. Konfirmasi ke WhatsApp kami setelah transfer, teknisi akan dijadwalkan.</p></div>
-<div class="rekening"><span style="font-size:11px; letter-spacing:0.14em; color:#94A3B8; font-weight:700">BSI</span><div style="font-family:'Playfair Display',serif; font-size:24px; font-weight:700; margin-top:4px">7216327513</div><div style="font-size:13px; color:#64748B; margin-top:4px">a.n dickynurjaya</div><div style="font-size:11px; color:#94A3B8; margin-top:8px">Atau scan QRIS di WhatsApp kami</div></div>
+<b>Pembayaran</b>
+<p>Transfer / QRIS</p>
+<div class="rekening">BSI 7216327513</div>
+<p>a.n dickynurjaya<br>Scan QRIS bisa minta di WhatsApp</p>
 </div>
-<div style="text-align:center; margin-top:22px">
-<a href="app.html" class="btn btn-gold">Buka Aplikasi Saya →</a>
-<p style="font-size:12px; color:#94A3B8; margin-top:12px">Satu aplikasi untuk semua pelanggan. Cukup ganti Kode Rumah-nya.</p>
-</div>
-</section>
-</main>
 
-<a href="https://wa.me/6281234567890?text=Halo%20SmartHome%20Bogor,%20saya%20mau%20pasang" class="wa-float">💬 Chat WhatsApp</a>
-<div class="footer">© 2026 SmartHome Bogor — smarthomebogor.my.id<br>Satu Aplikasi Untuk Semua Rumah Kamu</div>
+<a href="app.html" class="btn btn-hijau">🚀 BUKA APLIKASI SEKARANG</a>
+</div>
+
+<a href="https://wa.me/6281234567890?text=Halo%20SmartHome%20Bogor,%20saya%20mau%20pasang" class="wa-float">💬 Chat WA</a>
+<div class="footer">© 2026 SmartHome Bogor • smarthomebogor.my.id</div>
 
 </body>
 </html>
