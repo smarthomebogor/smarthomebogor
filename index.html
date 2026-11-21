@@ -1,185 +1,178 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<title>SmartHome Bogor - Rumah Pintar, Tanpa Ribet</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>SmartHome Bogor — Rumah Yang Mengerti Kamu</title>
+<link rel="icon" href="icon-v2.png?v=2">
+<link rel="apple-touch-icon" href="icon-v2.png?v=2">
+<meta name="theme-color" content="#0B1220">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-body { margin: 0; background: #F8FAFC; }
-img { max-width: 100%; }
-.faq-jawaban { display: none; }
-.faq-jawaban.buka { display: block; }
-.hero-modern { background: linear-gradient(180deg, rgba(2,6,23,0.55) 0%, rgba(2,6,23,0.82) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; border-radius: 0 0 32px 32px; }
-.card-modern { background: white; border-radius: 24px; box-shadow: 0 8px 30px rgba(15,23,42,0.06); border: 1px solid #E2E8F0; }
-.pill { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); }
-.pay-opt { border: 2px solid #E2E8F0; border-radius: 16px; padding: 12px; cursor: pointer; }
-.pay-opt.active { border-color: #22C55E; background: #F0FDF4; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #F7F5F0; color: #0B1220; font-family: 'Inter', system-ui, sans-serif; }
+a { text-decoration: none; }
+.serif { font-family: 'Playfair Display', serif; }
+.gold { color: #C9A86A; }
+.topbar { background: #0B1220; color: #E8DDC8; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 10px 16px; }
+.topbar span { color: #C9A86A; }
+.hero { background: #0B1220; color: white; padding: 0 0 42px; overflow: hidden; }
+.nav { max-width: 1080px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; background: white; }
+.brand b { font-size: 15px; letter-spacing: 0.04em; }
+.brand span { display: block; font-size: 10px; color: #A8B0C2; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
+.nav a { color: white; font-size: 13px; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); padding: 10px 18px; border-radius: 999px; }
+.hero-inner { max-width: 1080px; margin: 0 auto; padding: 28px 20px 0; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; }
+.eyebrow { color: #C9A86A; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 1.05; margin: 14px 0 14px; font-weight: 700; }
+.hero h1 em { font-style: italic; color: #C9A86A; font-weight: 600; }
+.hero p { color: #CBD5E1; font-size: 15px; line-height: 1.7; max-width: 480px; margin: 0; }
+.cta-row { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+.btn { padding: 15px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; display: inline-block; }
+.btn-gold { background: #C9A86A; color: #0B1220; }
+.btn-ghost { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
+.meta { display: flex; gap: 18px; margin-top: 26px; flex-wrap: wrap; }
+.meta div b { font-size: 18px; }
+.meta div span { display: block; font-size: 11px; color: #94A3B8; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+.hero-card { background: #FFFFFF; color: #0B1220; border-radius: 24px; padding: 22px; box-shadow: 0 24px 50px rgba(0,0,0,0.35); }
+.hero-card .row { display: flex; justify-content: space-between; align-items: center; }
+.pill { font-size: 11px; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 6px 10px; border-radius: 999px; }
+.hero-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin: 14px 0 4px; }
+.hero-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+.kode-box { background: #F7F5F0; border-radius: 14px; padding: 14px; margin-top: 16px; text-align: center; }
+.kode-box span { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #94A3B8; font-weight: 700; }
+.kode-box b { display: block; font-size: 26px; letter-spacing: 0.18em; margin-top: 4px; }
+.hero-card .btn { width: 100%; text-align: center; margin-top: 14px; }
+.section { max-width: 1080px; margin: 0 auto; padding: 44px 20px 10px; }
+.kicker { color: #B08D4A; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; }
+.section h2 { font-family: 'Playfair Display', serif; font-size: 32px; line-height: 1.2; margin: 10px 0 8px; }
+.section > p { color: #64748B; font-size: 14px; line-height: 1.7; max-width: 640px; margin: 0; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 22px; }
+.card { background: white; border-radius: 20px; padding: 20px; border: 1px solid #EDE8DD; }
+.card .num { font-family: 'Playfair Display', serif; color: #C9A86A; font-size: 13px; letter-spacing: 0.1em; }
+.card h3 { font-size: 16px; margin: 10px 0 6px; }
+.card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+.panel { background: white; border-radius: 20px; padding: 22px; border: 1px solid #EDE8DD; }
+.harga-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #F1EDE3; }
+.harga-row:last-child { border-bottom: none; }
+.harga-row b { font-size: 14px; }
+.harga-row span { display: block; font-size: 12px; color: #94A3B8; margin-top: 2px; }
+.harga { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; white-space: nowrap; }
+.langkah { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #F1EDE3; }
+.langkah:last-child { border-bottom: none; }
+.no { width: 34px; height: 34px; border-radius: 999px; border: 1px solid #C9A86A; color: #B08D4A; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+.quote { background: #0B1220; color: white; border-radius: 22px; padding: 28px; margin-top: 22px; }
+.quote p { font-family: 'Playfair Display', serif; font-size: 20px; line-height: 1.5; margin: 0; font-style: italic; }
+.quote b { display: block; margin-top: 14px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A86A; }
+.bayar { background: #FFFFFF; border: 1px solid #EDE8DD; border-radius: 22px; padding: 24px; display: grid; grid-template-columns: 1fr 0.8fr; gap: 20px; align-items: center; margin-top: 22px; }
+.bayar h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin: 0 0 8px; }
+.bayar p { font-size: 13px; color: #64748B; line-height: 1.7; margin: 0; }
+.bayar .rekening { background: #F7F5F0; border-radius: 14px; padding: 16px; text-align: center; }
+.footer { text-align: center; padding: 28px 20px 90px; font-size: 12px; color: #94A3B8; }
+.wa-float { position: fixed; bottom: 18px; right: 16px; background: #0B1220; color: white; padding: 13px 20px; border-radius: 999px; font-weight: 700; font-size: 14px; box-shadow: 0 14px 30px rgba(0,0,0,0.25); z-index: 99; border: 1px solid #C9A86A; }
+@media (max-width: 760px) {
+  .hero-inner, .grid-3, .split, .bayar { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 38px; }
+  .nav a { padding: 9px 14px; }
+  .section { padding: 32px 16px 6px; }
+}
 </style>
 </head>
-<body class="text-slate-900 overflow-x-hidden pb-24">
+<body>
 
-<div class="max-w-6xl mx-auto px-4 pt-4 flex justify-between items-center">
-<div class="flex items-center gap-2">
-<div class="w-9 h-9 bg-slate-900 text-white rounded-xl flex items-center justify-center font-extrabold">S</div>
-<div class="leading-none"><p class="font-extrabold text-[15px]">SmartHome <span class="text-green-500">Bogor</span></p><p class="text-[11px] text-slate-500">JABODETABEK - Garansi 30 Hari</p></div>
-</div>
-<a href="https://wa.me/628137000432" class="bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-full">Chat WA</a>
-</div>
+<div class="topbar">Bogor &nbsp;•&nbsp; <span>Smart Living, Tanpa Ribet</span> &nbsp;•&nbsp; 1 Aplikasi Untuk Semua Rumah</div>
 
-<div class="max-w-6xl mx-auto px-4 mt-4">
-<div class="hero-modern text-white text-center px-5 py-12 md:py-16">
-<p class="text-[11px] pill inline-block px-4 py-1.5 rounded-full font-semibold tracking-wide">MELAYANI BOGOR & JABODETABEK</p>
-<h1 class="text-[32px] md:text-[52px] font-extrabold leading-[1.05] mt-5">Rumah Jadi Pintar,<br>Tanpa Ribet<span class="text-green-400">.</span></h1>
-<p class="mt-4 text-[14px] md:text-[16px] text-slate-200 max-w-xl mx-auto leading-relaxed">Lampu, CCTV, Kunci Digital & Sensor - semua dikontrol dari HP. Survei gratis, bayar setelah terpasang.</p>
-<div class="flex flex-col sm:flex-row justify-center gap-3 mt-7">
-<a href="https://wa.me/628137000432" class="bg-green-500 text-white font-bold px-7 py-3.5 rounded-full text-sm shadow-lg">Konsultasi Gratis via WA</a>
-<a href="#bayar" class="bg-white text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm">Cara Bayar</a>
-</div>
-</div>
+<header class="hero">
+<div class="nav">
+<div class="brand"><img src="icon-v2.png?v=2" alt="SmartHome Bogor"><div><b>SMARTHOME BOGOR</b><span>Live Beautifully</span></div></div>
+<a href="app.html">Buka Aplikasi →</a>
 </div>
 
-<div class="max-w-6xl mx-auto px-4">
-<div class="bg-green-50 border border-green-200 p-4 text-center rounded-2xl mt-5"><p class="font-bold text-green-800 text-[13px]">PROMO: Survei + Konsultasi GRATIS - Tanpa DP, Bayar Setelah Terpasang</p></div>
-
-<div class="card-modern p-6 mt-5">
-<p class="text-[11px] font-bold text-green-600 tracking-widest">LAYANAN KAMI</p>
-<h2 class="text-[22px] font-extrabold mt-1">Apa yang bisa kami pasang?</h2>
-<div class="mt-5 space-y-3 text-[14px] font-semibold">
-<div class="flex justify-between border-b pb-3"><span>Lampu & Saklar Pintar</span><b>Rp 180rb</b></div>
-<div class="flex justify-between border-b pb-3"><span>CCTV & Doorbell Kamera</span><b>Rp 750rb</b></div>
-<div class="flex justify-between border-b pb-3"><span>Smart Lock / Kunci Digital</span><b>Rp 1,2jt</b></div>
-<div class="flex justify-between border-b pb-3"><span>Smart Speaker Setup</span><b>Rp 350rb</b></div>
-<div class="flex justify-between"><span>Sensor Gerak, Asap & Banjir</span><b>Rp 250rb</b></div>
+<div class="hero-inner">
+<div>
+<div class="eyebrow">SmartHome • Bogor</div>
+<h1>Rumah yang<br><em>mengerti</em> kamu,<br>dari mana saja.</h1>
+<p>Saat kamu di kantor, rumah tetap terjaga. Lampu, CCTV, gas, pompa, AC, dan GPS — semua tenang, semua dari satu aplikasi yang sama.</p>
+<div class="cta-row">
+<a href="app.html" class="btn btn-gold">Buka Aplikasi Saya →</a>
+<a href="https://wa.me/6281234567890?text=Halo%20SmartHome%20Bogor,%20saya%20mau%20konsultasi%20pasang" class="btn btn-ghost">Konsultasi via WhatsApp</a>
+</div>
+<div class="meta">
+<div><b>6+</b><span>Fitur Dalam 1 App</span></div>
+<div><b>1 App</b><span>Untuk Semua Customer</span></div>
+<div><b>100%</b><span>Kontrol Dari HP</span></div>
 </div>
 </div>
 
-<h2 class="text-[22px] font-extrabold text-center mt-8">Pilih Paket Kamu</h2>
-<div class="grid md:grid-cols-3 gap-4 mt-4">
-<div class="card-modern p-6 text-center"><p class="text-[11px] font-bold text-slate-400">BASIC</p><h3 class="text-[26px] font-extrabold mt-1">Rp 950rb</h3><p class="text-[13px] text-slate-500 mt-2">4 Lampu Pintar + 2 Stop Kontak Pintar</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Basic" class="block mt-4 border border-slate-900 font-bold py-3 rounded-full text-sm">Pilih Basic</a></div>
-<div class="card-modern p-6 text-center" style="background:#0F172A; color:white"><p class="text-[11px] font-bold text-green-400">PRO - PALING LARIS</p><h3 class="text-[26px] font-extrabold mt-1">Rp 2,5jt</h3><p class="text-[13px] text-slate-300 mt-2">Basic + CCTV 2 Titik + Smart Lock</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Pro" class="block mt-4 bg-green-500 font-bold py-3 rounded-full text-sm text-white">Pilih Pro</a></div>
-<div class="card-modern p-6 text-center"><p class="text-[11px] font-bold text-slate-400">SULTAN</p><h3 class="text-[26px] font-extrabold mt-1">Rp 5jt+</h3><p class="text-[13px] text-slate-500 mt-2">Full Rumah Pintar + Sensor + Gorden Otomatis</p><a href="https://wa.me/628137000432?text=Halo, saya mau pesan Paket Sultan" class="block mt-4 border border-slate-900 font-bold py-3 rounded-full text-sm">Pilih Sultan</a></div>
+<div class="hero-card">
+<div class="row"><b style="font-size:13px; letter-spacing:0.08em">APLIKASI PELANGGAN</b><span class="pill">● Aktif</span></div>
+<h3>Sudah punya Kode Rumah?</h3>
+<p>Masukkan kode yang diberikan teknisi kami. Contohnya seperti di bawah ini. Setelah itu, aplikasi ini hanya mengontrol rumah kamu.</p>
+<div class="kode-box"><span>Kode Rumah Kamu</span><b>BOGOR — 01</b></div>
+<a href="app.html" class="btn" style="background:#0B1220; color:white">Masukkan Kode & Buka Aplikasi →</a>
+<p style="text-align:center; font-size:11px; margin-top:10px">Belum punya kode? Chat kami, teknisi akan pasangkan untuk kamu.</p>
 </div>
+</div>
+</header>
 
-<div class="card-modern p-6 mt-4">
-<h2 class="text-[18px] font-extrabold">Hitung Sendiri Harga Kamu</h2>
-<div class="grid sm:grid-cols-2 gap-2 mt-3 text-[14px] font-semibold">
-<label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="lampu" onchange="hitung()" class="w-4 h-4"> Lampu Pintar (Rp 180rb)</label>
-<label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="cctv" onchange="hitung()" class="w-4 h-4"> CCTV (Rp 750rb)</label>
-<label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="kunci" onchange="hitung()" class="w-4 h-4"> Smart Lock (Rp 1,2jt)</label>
-<label class="flex items-center gap-2 border rounded-xl p-3"><input type="checkbox" id="speaker" onchange="hitung()" class="w-4 h-4"> Smart Speaker (Rp 350rb)</label>
+<main>
+<section class="section">
+<div class="kicker">Apa yang bisa kamu kontrol</div>
+<h2>Semua yang penting,<br>dalam satu tempat yang tenang.</h2>
+<p>Tidak ada banyak aplikasi, tidak ada banyak remote. Satu aplikasi, semua rumah, semua terasa ringan.</p>
+<div class="grid-3">
+<div class="card"><div class="num">01 — CAHAYA</div><h3>Lampu</h3><p>Lampu yang tertinggal menyala, matikan dari kantor. Pulang ke rumah yang sudah terang.</p></div>
+<div class="card"><div class="num">02 — KEAMANAN</div><h3>CCTV</h3><p>Lihat rumah dari HP. Ada gerakan, kamu langsung tahu.</p></div>
+<div class="card"><div class="num">03 — KESELAMATAN</div><h3>Sensor Gas</h3><p>Gas bocor terdeteksi lebih awal, sebelum menjadi masalah.</p></div>
+<div class="card"><div class="num">04 — AIR</div><h3>Pompa & Toren</h3><p>Toren penuh, pompa berhenti sendiri. Tidak ada lagi air meluber.</p></div>
+<div class="card"><div class="num">05 — UDARA</div><h3>AC & Kipas</h3><p>Nyalakan AC sebelum sampai rumah. Pulang, rumah sudah sejuk.</p></div>
+<div class="card"><div class="num">06 — KENDARAAN</div><h3>GPS Tracker</h3><p>Motor dan mobil terlihat posisinya, di peta, dari HP kamu.</p></div>
 </div>
-<h3 id="total" class="font-extrabold text-[20px] mt-4">Total: Rp 0</h3>
-</div>
+</section>
 
-<div class="card-modern p-6 mt-4">
-<h2 class="text-[18px] font-extrabold">Hitung Lampu + Diskon 10%</h2>
-<p class="text-[13px] text-slate-500 mt-1">Pasang 10 titik atau lebih, otomatis dapat diskon 10%.</p>
-<input type="number" id="jumlahLampu" placeholder="Contoh: 12" oninput="hitungLampu()" min="0" class="w-full p-3.5 border rounded-xl text-sm mt-3 bg-slate-50">
-<h3 id="hasilLampu" class="font-extrabold text-[18px] mt-3">Total: Rp 0</h3>
-<p id="detailLampu" class="text-[13px] text-slate-500">Ketik jumlah titik lampu dulu ya, Dicky!</p>
-<div id="diskonBox" style="display:none; background:#FEF9C3; border:1px solid #FACC15; padding:12px; border-radius:12px; font-weight:700; color:#854D0E; margin-top:12px; font-size:13px;">Selamat! Kamu dapat diskon 10% karena pasang 10 titik atau lebih!</div>
+<section class="section">
+<div class="kicker">Harga yang jujur</div>
+<h2>Transparan, per-point.<br>Tidak ada biaya yang disembunyikan.</h2>
+<div class="split">
+<div class="panel">
+<div class="harga-row"><div><b>Lampu Pintar</b><span>Per titik lampu</span></div><div class="harga">Rp 180rb</div></div>
+<div class="harga-row"><div><b>CCTV</b><span>Per titik kamera</span></div><div class="harga">Rp 750rb</div></div>
+<div class="harga-row"><div><b>Sensor Gas / Gerak</b><span>Per sensor</span></div><div class="harga">Rp 250rb</div></div>
+<div class="harga-row"><div><b>Smart Lock</b><span>Per pintu</span></div><div class="harga">Rp 1,2jt</div></div>
+<p style="font-size:12px; color:#94A3B8; margin-top:14px">Contoh: 3 lampu + 1 CCTV = Rp 1.290.000. Itu saja.</p>
 </div>
-
-<div id="bayar" class="card-modern p-6 mt-6">
-<h2 class="text-[20px] font-extrabold">Cara Pembayaran</h2>
-<p class="text-[13px] text-slate-500 mt-1">Cuma 2 cara ini saja. Bukti transfer langsung kirim ke WA.</p>
-<div class="grid md:grid-cols-2 gap-3 mt-4 text-[13px]">
-<div class="border rounded-2xl p-4 bg-slate-50"><p class="font-extrabold">1. Transfer BSI</p><p class="mt-1 text-slate-500">Transfer ke rekening di bawah, kirim bukti ke WA.</p><div class="bg-white border rounded-xl p-3 mt-3"><p class="font-bold">BSI</p><p class="text-[20px] font-extrabold tracking-wide">7216327513</p><p class="text-slate-500">a.n dickynurjaya</p><button onclick="copyRek()" class="text-green-600 font-bold text-[12px] mt-1">Salin Nomor</button></div></div>
-<div class="border rounded-2xl p-4 bg-slate-50"><p class="font-extrabold">2. QRIS</p><p class="mt-1 text-slate-500">Scan di HP, langsung bayar.</p><div class="bg-white border rounded-xl p-3 mt-3 text-center"><img src="qris.jpg" alt="QRIS SmartHome Bogor" class="w-[160px] h-[160px] mx-auto object-contain rounded-lg"><p class="text-[11px] font-bold mt-2">SMARTHOME BOGOR - QRIS</p><p class="text-[11px] text-slate-400">Scan pakai aplikasi apa saja.</p></div></div>
-</div>
-<div class="bg-green-50 border border-green-200 rounded-2xl p-4 mt-3 text-[13px]"><p class="font-extrabold">Bisa juga Bayar Setelah Pasang</p><p class="text-slate-500 mt-1">Tidak perlu DP. Kami survei, pasang, kamu coba dulu sampai bisa, baru bayar.</p></div>
-</div>
-
-<div class="mt-8"><h2 class="text-[20px] font-extrabold text-center">Kata Mereka</h2>
-<div class="grid md:grid-cols-3 gap-4 mt-4">
-<div class="card-modern p-5"><p class="text-yellow-500 text-sm">★★★★★</p><p class="text-[13px] mt-2">Pemasangan rapi, CCTV jernih banget. Bisa lihat dari HP walau lagi di kantor.</p><p class="font-bold text-sm mt-3">Budi - Bogor Kota</p></div>
-<div class="card-modern p-5"><p class="text-yellow-500 text-sm">★★★★★</p><p class="text-[13px] mt-2">Lampu bisa dimatiin dari HP, anak-anak seneng banget. Dijelasin sampai bisa.</p><p class="font-bold text-sm mt-3">Sari - Cibinong</p></div>
-<div class="card-modern p-5"><p class="text-yellow-500 text-sm">★★★★★</p><p class="text-[13px] mt-2">Smart Lock enak banget, tidak bawa kunci lagi. Bayar setelah terpasang, jadi aman.</p><p class="font-bold text-sm mt-3">Andi - Depok</p></div>
-</div></div>
-
-<div class="card-modern p-6 mt-6">
-<h2 class="text-[18px] font-extrabold mb-2">Pertanyaan Umum</h2>
-<div class="border-b py-3"><button onclick="bukaFaq('faq1')" class="w-full text-left font-bold text-sm flex justify-between">Berapa lama pemasangannya? <span>›</span></button><p id="faq1" class="faq-jawaban text-[13px] text-slate-500 mt-2">Rumah biasa 2-4 jam selesai. Paket Sultan 1 hari. Sudah termasuk setting HP sampai bisa dipakai.</p></div>
-<div class="border-b py-3"><button onclick="bukaFaq('faq2')" class="w-full text-left font-bold text-sm flex justify-between">Ada garansi tidak? <span>›</span></button><p id="faq2" class="faq-jawaban text-[13px] text-slate-500 mt-2">Ada, garansi pemasangan 30 hari. Kalau error karena pemasangan kami, kami perbaiki gratis.</p></div>
-<div class="border-b py-3"><button onclick="bukaFaq('faq3')" class="w-full text-left font-bold text-sm flex justify-between">Harus DP dulu? <span>›</span></button><p id="faq3" class="faq-jawaban text-[13px] text-slate-500 mt-2">Tidak. Survei & konsultasi gratis. Bayar setelah alat terpasang dan kamu sudah bisa pakai.</p></div>
-<div class="py-3"><button onclick="bukaFaq('faq4')" class="w-full text-left font-bold text-sm flex justify-between">Wilayah mana saja? <span>›</span></button><p id="faq4" class="faq-jawaban text-[13px] text-slate-500 mt-2">Jakarta, Bogor, Depok, Tangerang, Bekasi (JABODETABEK). Di luar itu bisa chat dulu.</p></div>
-</div>
-
-<div class="mt-6 p-6 rounded-[24px] bg-slate-900 text-white shadow-xl">
-<h2 class="text-[20px] font-extrabold text-center">Pesan & Bayar Sekarang</h2>
-<p class="text-center text-[13px] text-slate-300 mt-1 mb-4">Isi 10 detik, pilih cara bayar, langsung masuk ke WA kami.</p>
-<label class="block font-bold text-[13px] mb-1">Nama Kamu</label>
-<input type="text" id="nama" placeholder="Contoh: Dicky" oninput="simpanForm()" class="w-full p-3.5 rounded-xl mb-3 text-sm text-slate-900 bg-white">
-<label class="block font-bold text-[13px] mb-1">Alamat / Area</label>
-<input type="text" id="alamat" placeholder="Contoh: Bogor Kota" oninput="simpanForm()" class="w-full p-3.5 rounded-xl mb-3 text-sm text-slate-900 bg-white">
-<label class="block font-bold text-[13px] mb-1">Pilih Paket</label>
-<select id="paketPilih" onchange="simpanForm()" class="w-full p-3.5 rounded-xl mb-3 text-sm text-slate-900 bg-white"><option value="Paket Basic">Paket Basic - Rp 950rb</option><option value="Paket Pro">Paket Pro - Rp 2,5jt</option><option value="Paket Sultan">Paket Sultan - Rp 5jt+</option><option value="Konsultasi Dulu">Konsultasi Dulu</option></select>
-<label class="block font-bold text-[13px] mb-2">Pilih Cara Bayar</label>
-<div class="grid grid-cols-3 gap-2 mb-4">
-<div id="pay-transfer" class="pay-opt active bg-white text-slate-900 text-center" onclick="pilihBayar('Transfer BSI')"><p class="font-extrabold text-[13px]">Transfer</p><p class="text-[11px] text-slate-500">BSI</p></div>
-<div id="pay-qris" class="pay-opt bg-white text-slate-900 text-center" onclick="pilihBayar('QRIS')"><p class="font-extrabold text-[13px]">QRIS</p><p class="text-[11px] text-slate-500">Scan HP</p></div>
-<div id="pay-cod" class="pay-opt bg-white text-slate-900 text-center" onclick="pilihBayar('Bayar Setelah Pasang')"><p class="font-extrabold text-[13px]">COD</p><p class="text-[11px] text-slate-500">Setelah Pasang</p></div>
-</div>
-<div id="infoBayar" class="bg-white/10 rounded-xl p-3 text-[13px] mb-4">Kamu pilih: <b>Transfer BSI</b> - Transfer ke BSI 7216327513 a.n dickynurjaya, lalu kirim bukti ke WA.</div>
-<button class="w-full bg-green-500 font-bold py-4 rounded-full text-[15px] shadow-lg" onclick="kirimWA()">Bayar & Konfirmasi via WA</button>
+<div class="panel">
+<div style="font-size:11px; letter-spacing:0.18em; color:#B08D4A; font-weight:700">CARA KERJA</div>
+<div class="langkah"><div class="no">1</div><div><b>Chat WhatsApp</b><p style="font-size:13px; color:#64748B; margin:4px 0 0; line-height:1.6">Ceritakan rumah kamu, kami hitungkan biayanya dengan jujur.</p></div></div>
+<div class="langkah"><div class="no">2</div><div><b>Teknisi Datang & Memasang</b><p style="font-size:13px; color:#64748B; margin:4px 0 0; line-height:1.6">Rapi, dites sampai semua menyala dengan baik.</p></div></div>
+<div class="langkah"><div class="no">3</div><div><b>Kamu Dapat Kode Rumah</b><p style="font-size:13px; color:#64748B; margin:4px 0 0; line-height:1.6">Masukkan kode itu di aplikasi. Aplikasi ini hanya mengontrol rumah kamu.</p></div></div>
 </div>
 </div>
 
-<div class="max-w-6xl mx-auto px-4 mt-8 text-center text-[12px] text-slate-400"><p>SmartHome Bogor - WA 08137000432 - Melayani JABODETABEK</p></div>
-<a href="https://wa.me/628137000432" class="fixed bottom-4 right-4 bg-slate-900 text-white font-bold px-5 py-3.5 rounded-full shadow-xl text-sm z-50">Chat WA</a>
+<div class="quote">
+<p>“Pulang kerja, lampu yang lupa dimatikan tinggal dimatikan dari HP. Tagihan listrik langsung terasa bedanya. Rumah terasa lebih tenang.”</p>
+<b>— Ibu Rina • Bogor Kota • Pelanggan SmartHome Bogor</b>
+</div>
+</section>
 
-<script>
-let caraBayar = "Transfer BSI";
-function pilihBayar(pilih) {
-caraBayar = pilih;
-document.getElementById("pay-transfer").classList.remove("active");
-document.getElementById("pay-qris").classList.remove("active");
-document.getElementById("pay-cod").classList.remove("active");
-if (pilih == "Transfer BSI") { document.getElementById("pay-transfer").classList.add("active"); document.getElementById("infoBayar").innerHTML = "Kamu pilih: <b>Transfer BSI</b> - Transfer ke BSI 7216327513 a.n dickynurjaya, lalu kirim bukti ke WA."; }
-if (pilih == "QRIS") { document.getElementById("pay-qris").classList.add("active"); document.getElementById("infoBayar").innerHTML = "Kamu pilih: <b>QRIS</b> - Scan QRIS di atas, lalu kirim bukti ke WA."; }
-if (pilih == "Bayar Setelah Pasang") { document.getElementById("pay-cod").classList.add("active"); document.getElementById("infoBayar").innerHTML = "Kamu pilih: <b>Bayar Setelah Pasang</b> - Tidak perlu bayar sekarang. Kami survei & pasang dulu, kamu bayar setelah bisa pakai."; }
-localStorage.setItem("caraBayar", pilih);
-}
-function copyRek() { navigator.clipboard.writeText("7216327513"); alert("Nomor rekening disalin! BSI 7216327513 a.n dickynurjaya"); }
-function bukaFaq(id) { let el = document.getElementById(id); el.classList.toggle("buka"); }
-function hitung() {
-let total = 0;
-if (document.getElementById("lampu").checked) total += 180000;
-if (document.getElementById("cctv").checked) total += 750000;
-if (document.getElementById("kunci").checked) total += 1200000;
-if (document.getElementById("speaker").checked) total += 350000;
-document.getElementById("total").innerText = "Total: Rp " + total.toLocaleString("id-ID");
-}
-function hitungLampu() {
-let jumlah = document.getElementById("jumlahLampu").value;
-localStorage.setItem("jumlahLampu", jumlah);
-let hasil = document.getElementById("hasilLampu");
-let detail = document.getElementById("detailLampu");
-let diskonBox = document.getElementById("diskonBox");
-if (jumlah == "" || jumlah == 0) { hasil.innerText = "Total: Rp 0"; detail.innerText = "Ketik jumlah titik lampu dulu ya, Dicky!"; diskonBox.style.display = "none"; }
-else {
-let totalAwal = jumlah * 180000; let totalAkhir = totalAwal;
-if (jumlah >= 10) { let diskon = totalAwal * 0.1; totalAkhir = totalAwal - diskon; diskonBox.style.display = "block"; detail.innerText = jumlah + " titik x Rp 180rb = Rp " + totalAwal.toLocaleString("id-ID") + " - Diskon 10% = Rp " + totalAkhir.toLocaleString("id-ID"); }
-else { diskonBox.style.display = "none"; detail.innerText = jumlah + " titik x Rp 180rb = Rp " + totalAkhir.toLocaleString("id-ID") + ". Pasang 10 titik biar dapat diskon 10%!"; }
-hasil.innerText = "Total: Rp " + totalAkhir.toLocaleString("id-ID");
-}
-}
-function simpanForm() { localStorage.setItem("namaPelanggan", document.getElementById("nama").value); localStorage.setItem("alamatPelanggan", document.getElementById("alamat").value); localStorage.setItem("paketPelanggan", document.getElementById("paketPilih").value); }
-window.onload = function() {
-let jumlahLama = localStorage.getItem("jumlahLampu"); if (jumlahLama) { document.getElementById("jumlahLampu").value = jumlahLama; hitungLampu(); }
-let namaLama = localStorage.getItem("namaPelanggan"); if (namaLama) document.getElementById("nama").value = namaLama;
-let alamatLama = localStorage.getItem("alamatPelanggan"); if (alamatLama) document.getElementById("alamat").value = alamatLama;
-let paketLama = localStorage.getItem("paketPelanggan"); if (paketLama) document.getElementById("paketPilih").value = paketLama;
-let bayarLama = localStorage.getItem("caraBayar"); if (bayarLama) pilihBayar(bayarLama);
-}
-function kirimWA() {
-let nama = document.getElementById("nama").value; let alamat = document.getElementById("alamat").value; let paket = document.getElementById("paketPilih").value;
-if (nama == "" || alamat == "") { alert("Isi nama dan alamat dulu ya!"); return; }
-let pesan = "Halo, saya " + nama + " dari " + alamat + ". Saya mau pesan " + paket + ". Cara bayar: " + caraBayar + ". Boleh info jadwal survei?";
-window.open("https://wa.me/628137000432?text=" + encodeURIComponent(pesan), "_blank");
-}
-</script>
+<section class="section">
+<div class="kicker">Pembayaran</div>
+<h2>Semudah memesan,<br>semudah membayar.</h2>
+<div class="bayar">
+<div><h3>Transfer atau QRIS</h3><p>Pembayaran pemasangan melalui transfer bank atau scan QRIS. Konfirmasi ke WhatsApp kami setelah transfer, teknisi akan dijadwalkan.</p></div>
+<div class="rekening"><span style="font-size:11px; letter-spacing:0.14em; color:#94A3B8; font-weight:700">BSI</span><div style="font-family:'Playfair Display',serif; font-size:24px; font-weight:700; margin-top:4px">7216327513</div><div style="font-size:13px; color:#64748B; margin-top:4px">a.n dickynurjaya</div><div style="font-size:11px; color:#94A3B8; margin-top:8px">Atau scan QRIS di WhatsApp kami</div></div>
+</div>
+<div style="text-align:center; margin-top:22px">
+<a href="app.html" class="btn btn-gold">Buka Aplikasi Saya →</a>
+<p style="font-size:12px; color:#94A3B8; margin-top:12px">Satu aplikasi untuk semua pelanggan. Cukup ganti Kode Rumah-nya.</p>
+</div>
+</section>
+</main>
+
+<a href="https://wa.me/6281234567890?text=Halo%20SmartHome%20Bogor,%20saya%20mau%20pasang" class="wa-float">💬 Chat WhatsApp</a>
+<div class="footer">© 2026 SmartHome Bogor — smarthomebogor.my.id<br>Satu Aplikasi Untuk Semua Rumah Kamu</div>
+
 </body>
 </html>
