@@ -6,20 +6,19 @@
 <title>SmartHome Bogor - 4 Lampu</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
 <style>
-  body{font-family:sans-serif;background:#0f172a;color:white;text-align:center;padding:20px}
-  h1{font-size:22px}
-  .card{background:#1e293b;padding:20px;margin:12px auto;border-radius:16px;max-width:320px;display:flex;justify-content:space-between;align-items:center}
-  .card.on{border:2px solid #22c55e}
-  button{padding:10px 20px;border:none;border-radius:20px;font-weight:bold;cursor:pointer}
+  body{font-family:sans-serif;background:#0f172a;color:white;text-align:center;padding:20px;margin:0}
+  h1{font-size:22px;margin:10px 0}
+  #status{font-size:13px;color:#94a3b8;margin-bottom:15px}
+  .card{background:#1e293b;padding:20px;margin:12px auto;border-radius:16px;max-width:320px;display:flex;justify-content:space-between;align-items:center;text-align:left}
+  .card.on{border:2px solid #22c55e;background:#14532d}
+  button{padding:10px 20px;border:none;border-radius:20px;font-weight:bold;cursor:pointer;min-width:110px}
   .btn-on{background:#22c55e;color:white}
   .btn-off{background:#475569;color:white}
-  #status{font-size:13px;color:#94a3b8}
 </style>
 </head>
 <body>
 <h1>🏠 SmartHome Bogor</h1>
 <p id="status">Menghubungkan...</p>
-
 <div id="list"></div>
 
 <script>
@@ -27,21 +26,33 @@ const ruangan = ["Ruang Tamu","Kamar Tidur","Dapur","Ruang Belajar"];
 const topics = ["smarthomebogor/lampu1","smarthomebogor/lampu2","smarthomebogor/lampu3","smarthomebogor/lampu4"];
 let state = [false,false,false,false];
 
-// Konek ke broker yang sama kayak ESP32
-const client = new Paho.MQTT.Client("broker.hivemq.com", 8000, "web-" + Math.random());
-client.onConnectionLost = ()=>{ document.getElementById('status').innerText = "Terputus, refresh..."; };
-client.onMessageArrived = (msg)=>{
-  let idx = topics.indexOf(msg.destinationName.replace("/status",""));
+const clientId = "web-" + Math.random().toString(16).substr(2, 8);
+const client = new Paho.MQTT.Client("broker.hivemq.com", 8884, "/mqtt", clientId);
+
+client.onConnectionLost = function(){
+  document.getElementById('status').innerText = "Terputus, coba refresh...";
+};
+
+client.onMessageArrived = function(msg){
+  let topicAsli = msg.destinationName.replace("/status","");
+  let idx = topics.indexOf(topicAsli);
   if(idx !== -1){
     state[idx] = (msg.payloadString === "ON");
     render();
   }
 };
-client.connect({onSuccess:()=>{
-  document.getElementById('status').innerText = "● Terhubung - Siap Dikontrol";
-  topics.forEach(t=> client.subscribe(t+"/status"));
-  render();
-}});
+
+client.connect({
+  useSSL: true,
+  onSuccess: function(){
+    document.getElementById('status').innerText = "● Terhubung - Siap Dikontrol";
+    topics.forEach(t => client.subscribe(t + "/status"));
+    render();
+  },
+  onFailure: function(e){
+    document.getElementById('status').innerText = "Gagal konek: " + e.errorMessage + " - Coba refresh";
+  }
+});
 
 function render(){
   const list = document.getElementById('list');
@@ -54,13 +65,14 @@ function render(){
     list.appendChild(div);
   });
 }
+
 function toggle(i){
   const pesan = state[i] ? "OFF" : "ON";
   const msg = new Paho.MQTT.Message(pesan);
   msg.destinationName = topics[i];
   client.send(msg);
-  // Optimistic update biar tombol langsung respon
-  state[i] = !state[i]; render();
+  state[i] = !state[i];
+  render();
 }
 render();
 </script>
