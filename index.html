@@ -7,8 +7,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
 <style>
   body{font-family:sans-serif;background:#0f172a;color:white;text-align:center;padding:20px;margin:0}
-  h1{font-size:22px;margin:10px 0}
-  #status{font-size:13px;color:#94a3b8;margin-bottom:15px}
+  h1{font-size:22px}
+  #status{font-size:13px;color:#94a3b8}
   .card{background:#1e293b;padding:20px;margin:12px auto;border-radius:16px;max-width:320px;display:flex;justify-content:space-between;align-items:center;text-align:left}
   .card.on{border:2px solid #22c55e;background:#14532d}
   button{padding:10px 20px;border:none;border-radius:20px;font-weight:bold;cursor:pointer;min-width:110px}
@@ -18,30 +18,24 @@
 </head>
 <body>
 <h1>🏠 SmartHome Bogor</h1>
-<p id="status">Menghubungkan...</p>
+<p id="status">Menghubungkan ke EMQX...</p>
 <div id="list"></div>
-
 <script>
 const ruangan = ["Ruang Tamu","Kamar Tidur","Dapur","Ruang Belajar"];
 const topics = ["smarthomebogor/lampu1","smarthomebogor/lampu2","smarthomebogor/lampu3","smarthomebogor/lampu4"];
 let state = [false,false,false,false];
 
 const clientId = "web-" + Math.random().toString(16).substr(2, 8);
-const client = new Paho.MQTT.Client("broker.hivemq.com", 8884, "/mqtt", clientId);
+// GANTI BROKER KE EMQX - port 8084 lebih gampang tembus di 4G
+const client = new 【entity-Paho¦canonical_name=Paho】.MQTT.Client("broker.emqx.io", 8084, "/mqtt", clientId);
 
 client.onConnectionLost = function(){
   document.getElementById('status').innerText = "Terputus, coba refresh...";
 };
-
 client.onMessageArrived = function(msg){
-  let topicAsli = msg.destinationName.replace("/status","");
-  let idx = topics.indexOf(topicAsli);
-  if(idx !== -1){
-    state[idx] = (msg.payloadString === "ON");
-    render();
-  }
+  let idx = topics.indexOf(msg.destinationName.replace("/status",""));
+  if(idx !== -1){ state[idx] = (msg.payloadString === "ON"); render(); }
 };
-
 client.connect({
   useSSL: true,
   onSuccess: function(){
@@ -50,10 +44,9 @@ client.connect({
     render();
   },
   onFailure: function(e){
-    document.getElementById('status').innerText = "Gagal konek: " + e.errorMessage + " - Coba refresh";
+    document.getElementById('status').innerText = "Gagal konek: " + e.errorMessage + " - Coba refresh / ganti ke WiFi";
   }
 });
-
 function render(){
   const list = document.getElementById('list');
   list.innerHTML = "";
@@ -65,14 +58,12 @@ function render(){
     list.appendChild(div);
   });
 }
-
 function toggle(i){
   const pesan = state[i] ? "OFF" : "ON";
-  const msg = new Paho.MQTT.Message(pesan);
+  const msg = new 【entity-Paho¦canonical_name=Paho】.MQTT.Message(pesan);
   msg.destinationName = topics[i];
   client.send(msg);
-  state[i] = !state[i];
-  render();
+  state[i] = !state[i]; render();
 }
 render();
 </script>
