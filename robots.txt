@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://smarthomebogor.my.id/sitemap.xml

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="shb-bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#166534" />
+      <stop offset="100%" stop-color="#0d2217" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#shb-bg)" />
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#4ade80" stroke-opacity="0.24" stroke-width="1.5" />
+  <!-- Architectural roofline -->
+  <path
+    d="M14 31L32 16L50 31"
+    stroke="#f4faf6"
+    stroke-width="3.75"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- House walls -->
+  <path
+    d="M20 29V46.5C20 47.3284 20.6716 48 21.5 48H42.5C43.3284 48 44 47.3284 44 46.5V29"
+    stroke="#f4faf6"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Smart wireless signal & core node inside home -->
+  <path
+    d="M26 35.5C29.3137 32.1863 34.6863 32.1863 38 35.5"
+    stroke="#86efac"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <circle cx="32" cy="40.5" r="3.2" fill="#4ade80" />
+</svg>
