@@ -1,0 +1,17 @@
+{
+  "name": "backend-shb",
+  "version": "1.2.0",
+  "main": "backend-shb-server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node backend-shb-server.js",
+    "test": "node pricing.test.js && node biteship.test.js && node ipaymu.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
